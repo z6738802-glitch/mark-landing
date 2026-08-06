@@ -5,43 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MARK | אוטומציות עסקיות חכמות</title>
   <link rel="icon" href="logo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
     :root {
-      --teal: #00C9B1;
-      --blue: #1A6EF5;
-      --dark: #0D1117;
-      --dark-2: #161B22;
-      --dark-3: #21262D;
-      --text: #E6EDF3;
-      --text-dim: #8B949E;
-      --border: rgba(255,255,255,0.08);
-      --grad: linear-gradient(135deg, var(--teal), var(--blue));
+      --bg: #F8F9FA;
+      --bg-2: #FFFFFF;
+      --surface: #FFFFFF;
+      --border: #E5E7EB;
+      --text: #111827;
+      --text-dim: #6B7280;
+      --teal: #00A693;
+      --blue: #1D6BF5;
+      --grad: linear-gradient(135deg, #00A693, #1D6BF5);
+      --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04);
+      --shadow-hover: 0 4px 12px rgba(0,0,0,0.1), 0 12px 32px rgba(0,0,0,0.06);
     }
 
     body {
       font-family: 'Heebo', sans-serif;
-      background: var(--dark);
+      background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; right: 0; left: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 5vw;
-      background: rgba(13,17,23,0.85);
+      padding: 14px 5vw;
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo { height: 36px; }
-    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-logo { height: 32px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
     .nav-links a {
-      color: var(--text-dim); text-decoration: none; font-size: 14px;
+      color: var(--text-dim); text-decoration: none; font-size: 14px; font-weight: 500;
       transition: color .2s;
     }
     .nav-links a:hover { color: var(--teal); }
@@ -51,258 +55,267 @@
       border-radius: 8px; color: white; text-decoration: none;
       font-weight: 700; font-size: 14px;
       transition: opacity .2s, transform .2s;
+      display: inline-flex; align-items: center; gap: 6px;
     }
     .nav-cta:hover { opacity: .9; transform: translateY(-1px); }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       min-height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center;
+      display: flex; align-items: center;
       padding: 120px 5vw 80px;
+      background: linear-gradient(160deg, #F0FDF9 0%, #EFF6FF 50%, #F8F9FA 100%);
       position: relative; overflow: hidden;
     }
     .hero::before {
       content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0,201,177,0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 80% 60%, rgba(26,110,245,0.08) 0%, transparent 70%);
+      position: absolute; top: -200px; right: -200px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,166,147,0.08) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .hero-logo {
-      width: clamp(120px, 15vw, 180px);
-      margin-bottom: 32px;
-      position: relative; z-index: 1;
-      filter: drop-shadow(0 0 40px rgba(0,201,177,0.3));
-      animation: logoIn 1s ease forwards;
-      opacity: 0; transform: translateY(-16px);
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
     }
-    @keyframes logoIn { to { opacity: 1; transform: translateY(0); } }
-
+    .hero-text { position: relative; z-index: 1; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 16px;
-      border: 1px solid rgba(0,201,177,0.3);
+      padding: 6px 14px;
+      background: rgba(0,166,147,0.08);
+      border: 1px solid rgba(0,166,147,0.2);
       border-radius: 20px; font-size: 13px; color: var(--teal);
-      margin-bottom: 20px; position: relative; z-index: 1;
-      background: rgba(0,201,177,0.06);
-      animation: fadeUp .8s .3s ease both;
+      font-weight: 600; margin-bottom: 20px;
     }
     .badge-dot {
       width: 6px; height: 6px; border-radius: 50%;
-      background: var(--teal);
-      animation: pulse 2s infinite;
+      background: var(--teal); animation: pulse 2s infinite;
     }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 
     .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 5rem);
-      font-weight: 900; line-height: 1.1;
-      position: relative; z-index: 1;
-      animation: fadeUp .8s .4s ease both;
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 900; line-height: 1.15; color: var(--text);
+      animation: fadeUp .8s .2s ease both;
     }
     .hero h1 em {
       font-style: normal;
       background: var(--grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: var(--text-dim); max-width: 560px;
-      margin: 16px auto 0; line-height: 1.7;
-      position: relative; z-index: 1;
-      animation: fadeUp .8s .5s ease both;
+      font-size: 1.1rem; color: var(--text-dim); margin-top: 16px;
+      max-width: 480px; line-height: 1.7;
+      animation: fadeUp .8s .3s ease both;
     }
     .hero-actions {
-      display: flex; gap: 12px; margin-top: 36px;
-      justify-content: center; flex-wrap: wrap;
-      position: relative; z-index: 1;
-      animation: fadeUp .8s .6s ease both;
+      display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;
+      animation: fadeUp .8s .4s ease both;
     }
     .btn-main {
-      padding: 14px 32px;
-      background: var(--grad);
-      border-radius: 10px; color: white; text-decoration: none;
+      padding: 13px 28px; background: var(--grad);
+      border-radius: 8px; color: white; text-decoration: none;
       font-weight: 700; font-size: 15px;
-      box-shadow: 0 4px 24px rgba(0,201,177,0.25);
+      box-shadow: 0 4px 20px rgba(0,166,147,0.25);
+      display: inline-flex; align-items: center; gap: 8px;
       transition: transform .2s, box-shadow .2s;
     }
-    .btn-main:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,201,177,0.4); }
+    .btn-main:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,166,147,0.35); }
     .btn-ghost {
-      padding: 14px 32px;
-      border: 1px solid var(--border);
-      border-radius: 10px; color: var(--text); text-decoration: none;
+      padding: 13px 28px; border: 1.5px solid var(--border);
+      border-radius: 8px; color: var(--text); text-decoration: none;
       font-weight: 600; font-size: 15px;
-      background: rgba(255,255,255,0.04);
-      transition: background .2s, border-color .2s;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: border-color .2s, background .2s;
     }
-    .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(0,201,177,0.3); }
+    .btn-ghost:hover { border-color: var(--teal); background: rgba(0,166,147,0.04); }
+
+    .hero-visual {
+      position: relative; z-index: 1;
+      animation: fadeUp .8s .3s ease both;
+    }
+    .hero-logo-large {
+      width: 100%; max-width: 360px; margin: 0 auto; display: block;
+      filter: drop-shadow(0 20px 40px rgba(0,166,147,0.15));
+    }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── CLIENTS ── */
+    /* CLIENTS */
     .clients {
       padding: 80px 5vw;
+      background: var(--surface);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
+    .section-max { max-width: 1200px; margin: 0 auto; }
     .clients-label {
-      text-align: center; font-size: 13px;
-      color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase;
-      margin-bottom: 40px;
+      text-align: center; font-size: 13px; color: var(--text-dim);
+      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; font-weight: 600;
     }
     .clients-grid {
-      display: flex; flex-wrap: wrap;
-      justify-content: center; gap: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
     }
     .client-card {
-      background: var(--dark-2);
+      background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px 28px;
-      font-size: 15px; font-weight: 600;
-      color: var(--text-dim);
-      transition: all .25s;
-      cursor: default;
-      position: relative; overflow: hidden;
-    }
-    .client-card::before {
-      content: '';
-      position: absolute; top: 0; right: 0; left: 0; height: 2px;
-      background: var(--grad);
-      transform: scaleX(0);
-      transition: transform .3s;
+      border-radius: 14px; padding: 28px 20px;
+      text-align: center; text-decoration: none; color: var(--text);
+      transition: all .25s; box-shadow: var(--shadow);
+      display: flex; flex-direction: column; align-items: center; gap: 14px;
     }
     .client-card:hover {
-      color: var(--text);
-      border-color: rgba(0,201,177,0.2);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(0,166,147,0.2);
     }
-    .client-card:hover::before { transform: scaleX(1); }
+    .client-card img {
+      height: 52px; width: auto; object-fit: contain;
+      filter: grayscale(30%); transition: filter .3s;
+    }
+    .client-card:hover img { filter: grayscale(0%); }
+    .client-name { font-size: 13px; color: var(--text-dim); font-weight: 600; line-height: 1.4; }
 
-    /* ── SERVICES ── */
-    .section { padding: 80px 5vw; max-width: 1200px; margin: 0 auto; }
-    .section-label {
-      font-size: 13px; color: var(--teal);
-      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;
+    /* SERVICES */
+    .services { padding: 80px 5vw; }
+    .section-header { margin-bottom: 48px; }
+    .section-tag {
+      font-size: 13px; color: var(--teal); font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;
     }
     .section-title {
-      font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; margin-bottom: 48px;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: var(--text);
     }
+    .section-title em { font-style: normal; color: var(--teal); }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
     .service-card {
-      background: var(--dark-2);
-      border: 1px solid var(--border);
-      border-radius: 16px; padding: 28px;
-      transition: transform .25s, border-color .25s;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px;
+      box-shadow: var(--shadow); transition: all .25s;
     }
     .service-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(0,201,177,0.2);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(0,166,147,0.2);
     }
     .service-icon {
       width: 44px; height: 44px; border-radius: 10px;
-      background: rgba(0,201,177,0.1);
+      background: linear-gradient(135deg, rgba(0,166,147,0.1), rgba(29,107,245,0.1));
       display: flex; align-items: center; justify-content: center;
-      font-size: 20px; margin-bottom: 16px;
+      color: var(--teal); margin-bottom: 16px;
     }
     .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-    .service-card p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+    .service-card p { font-size: 14px; color: var(--text-dim); line-height: 1.65; }
 
-    /* ── CONTACT ── */
+    /* CONTACT */
     .contact-section {
       padding: 80px 5vw;
+      background: linear-gradient(160deg, #F0FDF9 0%, #EFF6FF 100%);
       border-top: 1px solid var(--border);
-      background: var(--dark-2);
     }
-    .contact-wrap {
-      max-width: 900px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
     }
-    .contact-info h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; margin-bottom: 16px; }
+    .contact-info h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; margin-bottom: 14px;
+    }
     .contact-info p { color: var(--text-dim); line-height: 1.7; margin-bottom: 28px; }
     .contact-links { display: flex; flex-direction: column; gap: 12px; }
     .contact-link {
-      display: flex; align-items: center; gap: 12px;
+      display: flex; align-items: center; gap: 14px;
       padding: 14px 18px;
-      background: var(--dark-3); border-radius: 10px;
-      text-decoration: none; color: var(--text);
-      border: 1px solid var(--border);
-      transition: border-color .2s, transform .2s;
+      background: white; border: 1px solid var(--border);
+      border-radius: 10px; text-decoration: none; color: var(--text);
       font-weight: 600; font-size: 15px;
+      box-shadow: var(--shadow); transition: all .2s;
     }
-    .contact-link:hover { border-color: rgba(0,201,177,0.3); transform: translateX(-4px); }
-    .contact-link-icon {
-      width: 36px; height: 36px; border-radius: 8px;
+    .contact-link:hover {
+      border-color: var(--teal); transform: translateX(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+    .link-icon {
+      width: 38px; height: 38px; border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 18px; flex-shrink: 0;
+      flex-shrink: 0; color: white;
     }
-    .whatsapp-icon { background: rgba(37,211,102,0.15); }
-    .email-icon { background: rgba(26,110,245,0.15); }
+    .link-icon.wa { background: #25D366; }
+    .link-icon.mail { background: var(--blue); }
 
-    /* ── FORM ── */
-    .contact-form { display: flex; flex-direction: column; gap: 14px; }
-    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    /* FORM */
+    .contact-form {
+      background: white; border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px;
+      box-shadow: var(--shadow);
+    }
+    .contact-form h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
     .form-field label { font-size: 13px; color: var(--text-dim); font-weight: 600; }
     .form-field input,
-    .form-field textarea {
-      background: var(--dark-3); border: 1px solid var(--border);
-      color: var(--text); border-radius: 8px; padding: 12px 14px;
+    .form-field textarea,
+    .form-field select {
+      background: var(--bg); border: 1.5px solid var(--border);
+      color: var(--text); border-radius: 8px; padding: 11px 14px;
       font-family: inherit; font-size: 14px;
-      transition: border-color .2s;
+      transition: border-color .2s; outline: none;
     }
     .form-field input:focus,
-    .form-field textarea:focus {
-      outline: none; border-color: rgba(0,201,177,0.4);
-    }
-    .form-field textarea { resize: vertical; min-height: 100px; }
+    .form-field textarea:focus,
+    .form-field select:focus { border-color: var(--teal); background: white; }
+    .form-field textarea { resize: vertical; min-height: 90px; }
     .form-submit {
-      padding: 13px;
-      background: var(--grad);
-      border: none; border-radius: 8px;
-      color: white; font-family: inherit;
-      font-size: 15px; font-weight: 700; cursor: pointer;
-      transition: opacity .2s, transform .2s;
+      width: 100%; padding: 13px;
+      background: var(--grad); border: none;
+      border-radius: 8px; color: white;
+      font-family: inherit; font-size: 15px; font-weight: 700;
+      cursor: pointer; transition: opacity .2s, transform .2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
     }
     .form-submit:hover { opacity: .9; transform: translateY(-1px); }
     .form-success {
-      padding: 14px; background: rgba(0,201,177,0.1);
-      border: 1px solid rgba(0,201,177,0.3);
-      border-radius: 8px; color: var(--teal);
-      text-align: center; font-weight: 600; display: none;
+      padding: 14px; background: rgba(0,166,147,0.08);
+      border: 1px solid rgba(0,166,147,0.25);
+      border-radius: 8px; color: var(--teal); text-align: center;
+      font-weight: 600; display: none; margin-top: 12px;
     }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
-      padding: 28px 5vw;
+      padding: 24px 5vw;
+      background: white;
       border-top: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
       flex-wrap: wrap; gap: 12px;
     }
-    footer img { height: 28px; opacity: .6; }
+    footer img { height: 26px; }
     footer span { font-size: 13px; color: var(--text-dim); }
 
-    /* ── SCROLL REVEAL ── */
+    /* REVEAL */
     .reveal {
-      opacity: 0; transform: translateY(24px);
+      opacity: 0; transform: translateY(20px);
       transition: opacity .6s ease, transform .6s ease;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
-      .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hero-sub { margin: 16px auto 0; }
+      .hero-actions { justify-content: center; }
+      .hero-visual { order: -1; }
+      .hero-logo-large { max-width: 200px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
   </style>
@@ -317,148 +330,212 @@
       <a href="#services">שירותים</a>
       <a href="#contact">צור קשר</a>
     </div>
-    <a href="#contact" class="nav-cta">בואו נדבר</a>
+    <a href="https://wa.me/972556738802" target="_blank" class="nav-cta">
+      <i data-lucide="message-circle" style="width:15px;height:15px"></i>
+      בואו נדבר
+    </a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <img src="logo.png" class="hero-logo" alt="MARK">
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      אוטומציות עסקיות חכמות
-    </div>
-    <h1>המערכות שמריצות<br>את <em>העסק שלך</em></h1>
-    <p class="hero-sub">
-      אנחנו בונים מערכות אוטומציה, IVR, פורטלים ואינטגרציות שחוסכות זמן, מפחיתות טעויות ומאפשרות לכם להתמקד במה שחשוב.
-    </p>
-    <div class="hero-actions">
-      <a href="https://wa.me/972556738802" target="_blank" class="btn-main">צרו קשר בוואטסאפ</a>
-      <a href="#services" class="btn-ghost">מה אנחנו עושים</a>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          אוטומציות עסקיות חכמות
+        </div>
+        <h1>המערכות שמריצות<br>את <em>העסק שלך</em></h1>
+        <p class="hero-sub">
+          בונים מערכות אוטומציה, IVR, פורטלים ואינטגרציות — שחוסכות זמן, מפחיתות טעויות ומשחררות אתכם להתמקד בעיקר.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/972556738802" target="_blank" class="btn-main">
+            <i data-lucide="message-circle" style="width:16px;height:16px"></i>
+            וואטסאפ
+          </a>
+          <a href="#services" class="btn-ghost">
+            <i data-lucide="arrow-left" style="width:16px;height:16px"></i>
+            השירותים שלנו
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="logo.png" class="hero-logo-large" alt="MARK Automations">
+      </div>
     </div>
   </section>
 
   <!-- CLIENTS -->
-  <div class="clients" id="clients">
-    <div class="clients-label">לקוחות שבוטחים בנו</div>
-    <div class="clients-grid">
-      <div class="client-card">הקופה המשותפת</div>
-      <div class="client-card">סלטי פריינד</div>
-      <div class="client-card">קופת ברידער</div>
-      <div class="client-card">מרכז מוסדות קרלין סטאלין — אגף מקושרים</div>
-      <div class="client-card">שערי רווחה — הסעות חסד</div>
+  <section class="clients" id="clients">
+    <div class="section-max">
+      <div class="clients-label">בין לקוחותינו</div>
+      <div class="clients-grid">
+
+        <a href="https://a400600500.com/" target="_blank" class="client-card reveal">
+          <img src="https://mekusharim.tzvi-mark.uk/uploads/7015370.jpg" alt="הקופה המשותפת">
+          <div class="client-name">הקופה המשותפת</div>
+        </a>
+
+        <a href="https://portal.salataifrainde.com/" target="_blank" class="client-card reveal">
+          <img src="https://mekusharim.tzvi-mark.uk/uploads/chef-logo.png" alt="סלטי פריינד">
+          <div class="client-name">סלטי פריינד</div>
+        </a>
+
+        <a href="#" class="client-card reveal">
+          <img src="https://mekusharim.tzvi-mark.uk/uploads/file__1_.PNG" alt="קופת ברידער">
+          <div class="client-name">קופת ברידער</div>
+        </a>
+
+        <a href="https://mekusharim.tzvi-mark.uk/" target="_blank" class="client-card reveal">
+          <img src="https://mekusharim.tzvi-mark.uk/images/logo.png" alt="מקושרים">
+          <div class="client-name">מרכז מוסדות קרלין סטאלין<br>אגף מקושרים</div>
+        </a>
+
+        <a href="#" class="client-card reveal">
+          <img src="https://mekusharim.tzvi-mark.uk/uploads/7002027.jpg" alt="שערי רווחה">
+          <div class="client-name">שערי רווחה — הסעות חסד</div>
+        </a>
+
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- SERVICES -->
-  <div id="services">
-    <div class="section">
-      <div class="reveal">
-        <div class="section-label">מה אנחנו בונים</div>
-        <div class="section-title">פתרונות שעובדים<br>בשבילכם 24/7</div>
+  <section class="services" id="services">
+    <div class="section-max">
+      <div class="section-header reveal">
+        <div class="section-tag">מה אנחנו בונים</div>
+        <div class="section-title">פתרונות שעובדים<br>בשבילכם <em>24/7</em></div>
       </div>
       <div class="services-grid">
         <div class="service-card reveal">
-          <div class="service-icon">📞</div>
+          <div class="service-icon"><i data-lucide="phone" style="width:22px;height:22px"></i></div>
           <h3>מערכות IVR</h3>
           <p>שלוחות טלפוניות חכמות בימות המשיח — הזמנות, אימות, הודעות ועוד. מותאם לקהל החרדי.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">⚡</div>
+          <div class="service-icon"><i data-lucide="zap" style="width:22px;height:22px"></i></div>
           <h3>אוטומציות N8N</h3>
           <p>חיבור בין מערכות, טריגרים אוטומטיים, דוחות ותהליכים — בלי קוד מיותר.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">🗂️</div>
+          <div class="service-icon"><i data-lucide="layout-dashboard" style="width:22px;height:22px"></i></div>
           <h3>מערכות CRM</h3>
           <p>ניהול לקוחות, חברים ורשומות — עם ממשק שתפור לצרכים שלכם.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">🌐</div>
+          <div class="service-icon"><i data-lucide="globe" style="width:22px;height:22px"></i></div>
           <h3>פורטלים ואתרים</h3>
           <p>ממשקי הזמנה, פורטלי לקוחות ודפי נחיתה — מהירים, נגישים ויפים.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">🔗</div>
+          <div class="service-icon"><i data-lucide="link" style="width:22px;height:22px"></i></div>
           <h3>אינטגרציות</h3>
           <p>חיבור ל-Origami, Nedarim Plus, WhatsApp, Supabase, וכל מערכת שצריך.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">📊</div>
+          <div class="service-icon"><i data-lucide="bar-chart-3" style="width:22px;height:22px"></i></div>
           <h3>דוחות ומעקב</h3>
           <p>דשבורדים חיים, ייצוא נתונים ולוגים — כדי שתדעו תמיד מה קורה.</p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- CONTACT -->
-  <div class="contact-section" id="contact">
-    <div class="contact-wrap">
-      <div class="contact-info reveal">
-        <h2>בואו נבנה<br>משהו יחד</h2>
-        <p>יש לכם רעיון? תהליך שחוזר על עצמו? בעיה שדורשת פתרון? תשאירו פרטים ונחזור אליכם.</p>
-        <div class="contact-links">
-          <a href="https://wa.me/972556738802" target="_blank" class="contact-link">
-            <div class="contact-link-icon whatsapp-icon">💬</div>
-            055-673-8802 — וואטסאפ
-          </a>
-          <a href="mailto:z6738802@gmail.com" class="contact-link">
-            <div class="contact-link-icon email-icon">✉</div>
-            z6738802@gmail.com
-          </a>
+  <section class="contact-section" id="contact">
+    <div class="section-max">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h2>בואו נבנה<br>משהו יחד</h2>
+          <p>יש לכם רעיון? תהליך שחוזר על עצמו? בעיה שדורשת פתרון חכם? תשאירו פרטים ונחזור אליכם.</p>
+          <div class="contact-links">
+            <a href="https://wa.me/972556738802" target="_blank" class="contact-link">
+              <div class="link-icon wa">
+                <i data-lucide="message-circle" style="width:18px;height:18px"></i>
+              </div>
+              055-673-8802 — וואטסאפ
+            </a>
+            <a href="mailto:z6738802@gmail.com" class="contact-link">
+              <div class="link-icon mail">
+                <i data-lucide="mail" style="width:18px;height:18px"></i>
+              </div>
+              z6738802@gmail.com
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div class="contact-form reveal">
-        <div class="form-field">
-          <label>שם</label>
-          <input type="text" id="fname" placeholder="ישראל ישראלי">
+        <div class="contact-form reveal">
+          <h3>השאירו פרטים</h3>
+          <div class="form-row">
+            <div class="form-field">
+              <label>שם</label>
+              <input type="text" id="fname" placeholder="ישראל ישראלי">
+            </div>
+            <div class="form-field">
+              <label>טלפון</label>
+              <input type="tel" id="fphone" placeholder="050-0000000">
+            </div>
+          </div>
+          <div class="form-field">
+            <label>נושא</label>
+            <select id="fsubject">
+              <option value="">בחרו נושא</option>
+              <option>מערכת IVR</option>
+              <option>אוטומציה N8N</option>
+              <option>מערכת CRM</option>
+              <option>פורטל או אתר</option>
+              <option>אינטגרציה</option>
+              <option>אחר</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>ספרו לנו</label>
+            <textarea id="fmessage" placeholder="תארו את הצורך שלכם..."></textarea>
+          </div>
+          <button class="form-submit" onclick="sendForm()">
+            <i data-lucide="send" style="width:16px;height:16px"></i>
+            שליחה דרך וואטסאפ
+          </button>
+          <div class="form-success" id="formSuccess">תודה! נחזור אליכם בהקדם.</div>
         </div>
-        <div class="form-field">
-          <label>טלפון</label>
-          <input type="tel" id="fphone" placeholder="050-0000000">
-        </div>
-        <div class="form-field">
-          <label>נושא</label>
-          <input type="text" id="fsubject" placeholder="במה אנחנו יכולים לעזור?">
-        </div>
-        <div class="form-field">
-          <label>פרטים</label>
-          <textarea id="fmessage" placeholder="ספרו לנו על הצורך שלכם..."></textarea>
-        </div>
-        <button class="form-submit" onclick="sendForm()">שליחה</button>
-        <div class="form-success" id="formSuccess">תודה! נחזור אליכם בהקדם.</div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
     <img src="logo.png" alt="MARK">
     <span>MARK אוטומציות עסקיות חכמות</span>
-    <span style="font-size:12px;color:var(--text-dim)">055-673-8802</span>
+    <span>055-673-8802</span>
   </footer>
 
   <script>
+    lucide.createIcons();
+
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          observer.unobserve(e.target);
+        }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // Form → WhatsApp
     function sendForm() {
       const name = document.getElementById('fname').value.trim();
       const phone = document.getElementById('fphone').value.trim();
-      const subject = document.getElementById('fsubject').value.trim();
+      const subject = document.getElementById('fsubject').value;
       const message = document.getElementById('fmessage').value.trim();
       if (!name || !phone) { alert('נא למלא שם וטלפון'); return; }
       const text = `*פנייה חדשה מהאתר*\n\n*שם:* ${name}\n*טלפון:* ${phone}\n*נושא:* ${subject}\n*פרטים:* ${message}`;
-      window.open(`https://wa.me/972556738802?text=${encodeURIComponent(text)}`, '_blank');
+      window.open('https://wa.me/972556738802?text=' + encodeURIComponent(text), '_blank');
       document.getElementById('formSuccess').style.display = 'block';
-      ['fname','fphone','fsubject','fmessage'].forEach(id => document.getElementById(id).value = '');
+      ['fname','fphone','fmessage'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('fsubject').value = '';
     }
   </script>
 
