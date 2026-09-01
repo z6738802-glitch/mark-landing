@@ -226,6 +226,7 @@
       gap: 20px;
     }
     .service-card {
+      display: block; text-decoration: none; color: inherit;
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 14px; padding: 28px;
       box-shadow: var(--shadow); transition: all .25s;
@@ -242,6 +243,7 @@
       color: var(--teal); margin-bottom: 16px;
     }
     .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .service-card:hover h3 { color: var(--teal); }
     .service-card p { font-size: 14px; color: var(--text-dim); line-height: 1.65; }
 
     /* CONTACT */
@@ -493,31 +495,31 @@
         <h2 class="section-title">פתרונות שעובדים<br>בשבילכם <em>24/7</em></h2>
       </div>
       <div class="services-grid">
-        <div class="service-card reveal">
+        <a href="/ivr/" class="service-card reveal">
           <div class="service-icon"><i data-lucide="phone" style="width:22px;height:22px"></i></div>
           <h3>מערכות IVR</h3>
           <p>שלוחות טלפוניות חכמות בימות המשיח — הזמנות, אימות, הודעות ועוד. מותאם לקהל החרדי.</p>
-        </div>
-        <div class="service-card reveal">
+        </a>
+        <a href="/n8n/" class="service-card reveal">
           <div class="service-icon"><i data-lucide="zap" style="width:22px;height:22px"></i></div>
           <h3>אוטומציות N8N</h3>
           <p>חיבור בין מערכות, טריגרים אוטומטיים, דוחות ותהליכים — בלי קוד מיותר.</p>
-        </div>
-        <div class="service-card reveal">
+        </a>
+        <a href="/crm/" class="service-card reveal">
           <div class="service-icon"><i data-lucide="layout-dashboard" style="width:22px;height:22px"></i></div>
           <h3>מערכות CRM</h3>
           <p>ניהול לקוחות, חברים ורשומות — עם ממשק שתפור לצרכים שלכם.</p>
-        </div>
-        <div class="service-card reveal">
+        </a>
+        <a href="/portals/" class="service-card reveal">
           <div class="service-icon"><i data-lucide="globe" style="width:22px;height:22px"></i></div>
           <h3>פורטלים ואתרים</h3>
           <p>ממשקי הזמנה, פורטלי לקוחות ודפי נחיתה — מהירים, נגישים ויפים.</p>
-        </div>
-        <div class="service-card reveal">
+        </a>
+        <a href="/integrations/" class="service-card reveal">
           <div class="service-icon"><i data-lucide="link" style="width:22px;height:22px"></i></div>
           <h3>אינטגרציות</h3>
           <p>חיבור ל-Origami, Nedarim Plus, WhatsApp, Supabase, וכל מערכת שצריך.</p>
-        </div>
+        </a>
         <div class="service-card reveal">
           <div class="service-icon"><i data-lucide="bar-chart-3" style="width:22px;height:22px"></i></div>
           <h3>דוחות ומעקב</h3>
