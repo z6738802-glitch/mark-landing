@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# חסימת סביבות משנה ואפליקציות פנימיות אינה נדרשת כאן —
+# כל תת-דומיין מנוהל בנפרד ב-CapRover וצריך robots.txt משלו.
+
+Sitemap: https://tzvi-mark.uk/sitemap.xml
