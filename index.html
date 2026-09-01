@@ -3,7 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MARK | אוטומציות עסקיות חכמות</title>
+
+  <title>צביקי מרק | MARK אוטומציות — מערכות IVR, N8N ואוטומציה לעסקים</title>
+  <meta name="description" content="צביקי מרק, MARK אוטומציות: בניית מערכות IVR בימות המשיח, אוטומציות N8N, מערכות CRM, פורטלים ואינטגרציות לעסקים ולארגונים בישראל, כולל התאמה מלאה למגזר החרדי.">
+  <meta name="author" content="צביקי מרק">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://tzvi-mark.uk/">
+  <meta name="theme-color" content="#00A693">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MARK אוטומציות">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:url" content="https://tzvi-mark.uk/">
+  <meta property="og:title" content="צביקי מרק | MARK אוטומציות — מערכות IVR, N8N ואוטומציה לעסקים">
+  <meta property="og:description" content="בניית מערכות אוטומציה, IVR, CRM, פורטלים ואינטגרציות לעסקים ולארגונים בישראל.">
+  <meta property="og:image" content="https://tzvi-mark.uk/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="צביקי מרק | MARK אוטומציות">
+  <meta name="twitter:description" content="מערכות IVR, אוטומציות N8N, CRM ואינטגרציות לעסקים ולארגונים בישראל.">
+  <meta name="twitter:image" content="https://tzvi-mark.uk/logo.png">
+
   <link rel="icon" href="logo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -58,6 +78,13 @@
       display: inline-flex; align-items: center; gap: 6px;
     }
     .nav-cta:hover { opacity: .9; transform: translateY(-1px); }
+
+    /* ABOUT */
+    .about { padding: 90px 5vw; background: var(--bg-2); }
+    .about-text { max-width: 780px; margin: 0 auto; }
+    .about-text p { color: var(--text-dim); font-size: 16.5px; margin-bottom: 18px; }
+    .about-text a { color: var(--teal); font-weight: 600; text-decoration: none; }
+    .about-text a:hover { text-decoration: underline; }
 
     /* HERO */
     .hero {
@@ -319,15 +346,73 @@
       .nav-links { display: none; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://tzvi-mark.uk/#business",
+        "name": "MARK אוטומציות",
+        "alternateName": ["MARK Automations", "מארק אוטומציות"],
+        "url": "https://tzvi-mark.uk/",
+        "logo": "https://tzvi-mark.uk/logo.png",
+        "image": "https://tzvi-mark.uk/logo.png",
+        "description": "בניית מערכות אוטומציה, IVR, CRM, פורטלים ואינטגרציות לעסקים ולארגונים בישראל.",
+        "telephone": "+972-55-673-8802",
+        "email": "z6738802@gmail.com",
+        "founder": { "@id": "https://tzvi-mark.uk/#person" },
+        "areaServed": { "@type": "Country", "name": "ישראל" },
+        "address": { "@type": "PostalAddress", "addressCountry": "IL" },
+        "knowsLanguage": ["he", "en"],
+        "sameAs": ["https://wa.me/972556738802"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "שירותי MARK אוטומציות",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "מערכות IVR בימות המשיח" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "אוטומציות N8N" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "מערכות CRM" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "פורטלים ואתרים" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "אינטגרציות מערכות" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "דוחות ודשבורדים" } }
+          ]
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://tzvi-mark.uk/#person",
+        "name": "צביקי מרק",
+        "alternateName": ["צבי מרק", "Tzviki Mark", "Tzvi Mark"],
+        "jobTitle": "מייסד ומפתח מערכות אוטומציה",
+        "url": "https://tzvi-mark.uk/",
+        "telephone": "+972-55-673-8802",
+        "email": "z6738802@gmail.com",
+        "worksFor": { "@id": "https://tzvi-mark.uk/#business" },
+        "knowsAbout": ["אוטומציה עסקית", "N8N", "ימות המשיח", "Origami", "Supabase", "מערכות IVR", "CRM"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://tzvi-mark.uk/#website",
+        "url": "https://tzvi-mark.uk/",
+        "name": "MARK אוטומציות",
+        "inLanguage": "he-IL",
+        "publisher": { "@id": "https://tzvi-mark.uk/#business" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
-    <img src="logo.png" class="nav-logo" alt="MARK">
+    <img src="logo.png" class="nav-logo" alt="MARK אוטומציות — צביקי מרק">
     <div class="nav-links">
       <a href="#clients">לקוחות</a>
       <a href="#services">שירותים</a>
+      <a href="#about">מי אנחנו</a>
       <a href="#contact">צור קשר</a>
     </div>
     <a href="https://wa.me/972556738802" target="_blank" class="nav-cta">
@@ -360,7 +445,7 @@
         </div>
       </div>
       <div class="hero-visual">
-        <img src="logo.png" class="hero-logo-large" alt="MARK Automations">
+        <img src="logo.png" class="hero-logo-large" alt="MARK Automations — מערכות אוטומציה לעסקים" loading="lazy">
       </div>
     </div>
   </section>
@@ -405,7 +490,7 @@
     <div class="section-max">
       <div class="section-header reveal">
         <div class="section-tag">מה אנחנו בונים</div>
-        <div class="section-title">פתרונות שעובדים<br>בשבילכם <em>24/7</em></div>
+        <h2 class="section-title">פתרונות שעובדים<br>בשבילכם <em>24/7</em></h2>
       </div>
       <div class="services-grid">
         <div class="service-card reveal">
@@ -438,6 +523,39 @@
           <h3>דוחות ומעקב</h3>
           <p>דשבורדים חיים, ייצוא נתונים ולוגים — כדי שתדעו תמיד מה קורה.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-max">
+      <div class="section-header reveal">
+        <div class="section-tag">מי עומד מאחורי MARK</div>
+        <h2 class="section-title">צביקי מרק —<br>בונה מערכות <em>שעובדות</em></h2>
+      </div>
+      <div class="about-text reveal">
+        <p>
+          שמי צביקי מרק, ואני מייסד MARK אוטומציות. אני בונה מערכות אוטומציה מותאמות אישית לעסקים,
+          לארגוני צדקה ולמוסדות בישראל — מערכות שמחליפות עבודה ידנית חוזרת בתהליך שרץ לבד.
+        </p>
+        <p>
+          ההתמחות שלי היא בשילוב בין שלוחות טלפוניות בימות המשיח, אוטומציות N8N, בסיסי נתונים
+          ב-Supabase ובאוריגמי, וממשקי ווב בעברית מלאה. הרבה מהלקוחות שלי הם ארגונים מהמגזר החרדי,
+          ולכן כל מערכת נבנית עם התאמה מלאה לעברית, ל-RTL ולאופן שבו הקהילה באמת עובדת —
+          מהזמנה בטלפון ועד דוח ניהולי.
+        </p>
+        <p>
+          בין הפרויקטים: מערכות גבייה וחיוב לקופות שכונתיות, מערכות הזמנת הסעות רפואיות,
+          מערכות הזמנת הטבות בשלוחה טלפונית, ופורטלי ניהול למוסדות. כל פרויקט נבנה מאפס
+          לפי התהליך של הארגון, לא לפי תבנית מוכנה.
+        </p>
+        <p>
+          רוצים לבדוק אם התהליך שלכם ניתן לאוטומציה? אפשר לדבר איתי ישירות בוואטסאפ
+          במספר <a href="https://wa.me/972556738802" target="_blank">055-673-8802</a>.
+        </p>
       </div>
     </div>
   </section>
@@ -506,7 +624,7 @@
   <!-- FOOTER -->
   <footer>
     <img src="logo.png" alt="MARK">
-    <span>MARK אוטומציות עסקיות חכמות</span>
+    <span>MARK אוטומציות עסקיות חכמות — צביקי מרק</span>
     <span>055-673-8802</span>
   </footer>
 
