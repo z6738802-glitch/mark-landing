@@ -4,350 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>צביקי מרק | MARK אוטומציות — מערכות IVR, N8N ואוטומציה לעסקים</title>
-  <meta name="description" content="צביקי מרק, MARK אוטומציות: בניית מערכות IVR בימות המשיח, אוטומציות N8N, מערכות CRM, פורטלים ואינטגרציות לעסקים ולארגונים בישראל, כולל התאמה מלאה למגזר החרדי.">
+  <title>MARK | סוכני AI ומערכות ניהול לעסקים</title>
+  <meta name="description" content="MARK בונה לעסקים מערכת ניהול מסודרת ומעמידה עליה סוכני AI שעונים ללקוחות, גובים, קובעים תורים ומדווחים, בטלפון, בוואטסאפ ובמערכות. ואנחנו אחראים שזה עובד.">
   <meta name="author" content="צביקי מרק">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://tzvi-mark.uk/">
-  <meta name="theme-color" content="#00A693">
+  <meta name="theme-color" content="#0A0E12">
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="MARK אוטומציות">
+  <meta property="og:site_name" content="MARK">
   <meta property="og:locale" content="he_IL">
   <meta property="og:url" content="https://tzvi-mark.uk/">
-  <meta property="og:title" content="צביקי מרק | MARK אוטומציות — מערכות IVR, N8N ואוטומציה לעסקים">
-  <meta property="og:description" content="בניית מערכות אוטומציה, IVR, CRM, פורטלים ואינטגרציות לעסקים ולארגונים בישראל.">
+  <meta property="og:title" content="MARK | סוכני AI ומערכות ניהול לעסקים">
+  <meta property="og:description" content="קודם בית מסודר, אחר כך סוכני AI שעובדים בתוכו. עונים, גובים, קובעים ומדווחים.">
   <meta property="og:image" content="https://tzvi-mark.uk/logo.png">
-
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="צביקי מרק | MARK אוטומציות">
-  <meta name="twitter:description" content="מערכות IVR, אוטומציות N8N, CRM ואינטגרציות לעסקים ולארגונים בישראל.">
+  <meta name="twitter:title" content="MARK | סוכני AI ומערכות ניהול לעסקים">
+  <meta name="twitter:description" content="קודם בית מסודר, אחר כך סוכני AI שעובדים בתוכו.">
   <meta name="twitter:image" content="https://tzvi-mark.uk/logo.png">
 
-  <link rel="icon" href="logo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    :root {
-      --bg: #F8F9FA;
-      --bg-2: #FFFFFF;
-      --surface: #FFFFFF;
-      --border: #E5E7EB;
-      --text: #111827;
-      --text-dim: #6B7280;
-      --teal: #00A693;
-      --blue: #1D6BF5;
-      --grad: linear-gradient(135deg, #00A693, #1D6BF5);
-      --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04);
-      --shadow-hover: 0 4px 12px rgba(0,0,0,0.1), 0 12px 32px rgba(0,0,0,0.06);
-    }
-
-    body {
-      font-family: 'Heebo', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; right: 0; left: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 5vw;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo { height: 32px; }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-links a {
-      color: var(--text-dim); text-decoration: none; font-size: 14px; font-weight: 500;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--teal); }
-    .nav-cta {
-      padding: 9px 22px;
-      background: var(--grad);
-      border-radius: 8px; color: white; text-decoration: none;
-      font-weight: 700; font-size: 14px;
-      transition: opacity .2s, transform .2s;
-      display: inline-flex; align-items: center; gap: 6px;
-    }
-    .nav-cta:hover { opacity: .9; transform: translateY(-1px); }
-
-    /* ABOUT */
-    .about { padding: 90px 5vw; background: var(--bg-2); }
-    .about-text { max-width: 780px; margin: 0 auto; }
-    .about-text p { color: var(--text-dim); font-size: 16.5px; margin-bottom: 18px; }
-    .about-text a { color: var(--teal); font-weight: 600; text-decoration: none; }
-    .about-text a:hover { text-decoration: underline; }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 120px 5vw 80px;
-      background: linear-gradient(160deg, #F0FDF9 0%, #EFF6FF 50%, #F8F9FA 100%);
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; top: -200px; right: -200px;
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,166,147,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-inner {
-      max-width: 1200px; margin: 0 auto; width: 100%;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-    }
-    .hero-text { position: relative; z-index: 1; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 14px;
-      background: rgba(0,166,147,0.08);
-      border: 1px solid rgba(0,166,147,0.2);
-      border-radius: 20px; font-size: 13px; color: var(--teal);
-      font-weight: 600; margin-bottom: 20px;
-    }
-    .badge-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--teal); animation: pulse 2s infinite;
-    }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
-
-    .hero h1 {
-      font-size: clamp(2.2rem, 4.5vw, 4rem);
-      font-weight: 900; line-height: 1.15; color: var(--text);
-      animation: fadeUp .8s .2s ease both;
-    }
-    .hero h1 em {
-      font-style: normal;
-      background: var(--grad);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-sub {
-      font-size: 1.1rem; color: var(--text-dim); margin-top: 16px;
-      max-width: 480px; line-height: 1.7;
-      animation: fadeUp .8s .3s ease both;
-    }
-    .hero-actions {
-      display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;
-      animation: fadeUp .8s .4s ease both;
-    }
-    .btn-main {
-      padding: 13px 28px; background: var(--grad);
-      border-radius: 8px; color: white; text-decoration: none;
-      font-weight: 700; font-size: 15px;
-      box-shadow: 0 4px 20px rgba(0,166,147,0.25);
-      display: inline-flex; align-items: center; gap: 8px;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .btn-main:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,166,147,0.35); }
-    .btn-ghost {
-      padding: 13px 28px; border: 1.5px solid var(--border);
-      border-radius: 8px; color: var(--text); text-decoration: none;
-      font-weight: 600; font-size: 15px;
-      display: inline-flex; align-items: center; gap: 8px;
-      transition: border-color .2s, background .2s;
-    }
-    .btn-ghost:hover { border-color: var(--teal); background: rgba(0,166,147,0.04); }
-
-    .hero-visual {
-      position: relative; z-index: 1;
-      animation: fadeUp .8s .3s ease both;
-    }
-    .hero-logo-large {
-      width: 100%; max-width: 360px; margin: 0 auto; display: block;
-      filter: drop-shadow(0 20px 40px rgba(0,166,147,0.15));
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* CLIENTS */
-    .clients {
-      padding: 80px 5vw;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .section-max { max-width: 1200px; margin: 0 auto; }
-    .clients-label {
-      text-align: center; font-size: 13px; color: var(--text-dim);
-      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; font-weight: 600;
-    }
-    .clients-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .client-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 14px; padding: 28px 20px;
-      text-align: center; text-decoration: none; color: var(--text);
-      transition: all .25s; box-shadow: var(--shadow);
-      display: flex; flex-direction: column; align-items: center; gap: 14px;
-    }
-    .client-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(0,166,147,0.2);
-    }
-    .client-card img {
-      height: 52px; width: auto; object-fit: contain;
-      filter: grayscale(30%); transition: filter .3s;
-    }
-    .client-card:hover img { filter: grayscale(0%); }
-    .client-name { font-size: 13px; color: var(--text-dim); font-weight: 600; line-height: 1.4; }
-
-    /* SERVICES */
-    .services { padding: 80px 5vw; }
-    .section-header { margin-bottom: 48px; }
-    .section-tag {
-      font-size: 13px; color: var(--teal); font-weight: 700;
-      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;
-    }
-    .section-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: var(--text);
-    }
-    .section-title em { font-style: normal; color: var(--teal); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .service-card {
-      display: block; text-decoration: none; color: inherit;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 14px; padding: 28px;
-      box-shadow: var(--shadow); transition: all .25s;
-    }
-    .service-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(0,166,147,0.2);
-    }
-    .service-icon {
-      width: 44px; height: 44px; border-radius: 10px;
-      background: linear-gradient(135deg, rgba(0,166,147,0.1), rgba(29,107,245,0.1));
-      display: flex; align-items: center; justify-content: center;
-      color: var(--teal); margin-bottom: 16px;
-    }
-    .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-    .service-card:hover h3 { color: var(--teal); }
-    .service-card p { font-size: 14px; color: var(--text-dim); line-height: 1.65; }
-
-    /* CONTACT */
-    .contact-section {
-      padding: 80px 5vw;
-      background: linear-gradient(160deg, #F0FDF9 0%, #EFF6FF 100%);
-      border-top: 1px solid var(--border);
-    }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
-    }
-    .contact-info h2 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; margin-bottom: 14px;
-    }
-    .contact-info p { color: var(--text-dim); line-height: 1.7; margin-bottom: 28px; }
-    .contact-links { display: flex; flex-direction: column; gap: 12px; }
-    .contact-link {
-      display: flex; align-items: center; gap: 14px;
-      padding: 14px 18px;
-      background: white; border: 1px solid var(--border);
-      border-radius: 10px; text-decoration: none; color: var(--text);
-      font-weight: 600; font-size: 15px;
-      box-shadow: var(--shadow); transition: all .2s;
-    }
-    .contact-link:hover {
-      border-color: var(--teal); transform: translateX(-3px);
-      box-shadow: var(--shadow-hover);
-    }
-    .link-icon {
-      width: 38px; height: 38px; border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; color: white;
-    }
-    .link-icon.wa { background: #25D366; }
-    .link-icon.mail { background: var(--blue); }
-
-    /* FORM */
-    .contact-form {
-      background: white; border: 1px solid var(--border);
-      border-radius: 16px; padding: 32px;
-      box-shadow: var(--shadow);
-    }
-    .contact-form h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
-    .form-field label { font-size: 13px; color: var(--text-dim); font-weight: 600; }
-    .form-field input,
-    .form-field textarea,
-    .form-field select {
-      background: var(--bg); border: 1.5px solid var(--border);
-      color: var(--text); border-radius: 8px; padding: 11px 14px;
-      font-family: inherit; font-size: 14px;
-      transition: border-color .2s; outline: none;
-    }
-    .form-field input:focus,
-    .form-field textarea:focus,
-    .form-field select:focus { border-color: var(--teal); background: white; }
-    .form-field textarea { resize: vertical; min-height: 90px; }
-    .form-submit {
-      width: 100%; padding: 13px;
-      background: var(--grad); border: none;
-      border-radius: 8px; color: white;
-      font-family: inherit; font-size: 15px; font-weight: 700;
-      cursor: pointer; transition: opacity .2s, transform .2s;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-    }
-    .form-submit:hover { opacity: .9; transform: translateY(-1px); }
-    .form-success {
-      padding: 14px; background: rgba(0,166,147,0.08);
-      border: 1px solid rgba(0,166,147,0.25);
-      border-radius: 8px; color: var(--teal); text-align: center;
-      font-weight: 600; display: none; margin-top: 12px;
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 24px 5vw;
-      background: white;
-      border-top: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 12px;
-    }
-    footer img { height: 26px; }
-    footer span { font-size: 13px; color: var(--text-dim); }
-
-    /* REVEAL */
-    .reveal {
-      opacity: 0; transform: translateY(20px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-      .hero-sub { margin: 16px auto 0; }
-      .hero-actions { justify-content: center; }
-      .hero-visual { order: -1; }
-      .hero-logo-large { max-width: 200px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .form-row { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-    }
-  </style>
+  <link rel="icon" href="logo-mark.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -356,12 +35,12 @@
       {
         "@type": "ProfessionalService",
         "@id": "https://tzvi-mark.uk/#business",
-        "name": "MARK אוטומציות",
-        "alternateName": ["MARK Automations", "מארק אוטומציות"],
+        "name": "MARK",
+        "alternateName": ["MARK אוטומציות", "MARK Automations", "מארק אוטומציות"],
         "url": "https://tzvi-mark.uk/",
         "logo": "https://tzvi-mark.uk/logo.png",
         "image": "https://tzvi-mark.uk/logo.png",
-        "description": "בניית מערכות אוטומציה, IVR, CRM, פורטלים ואינטגרציות לעסקים ולארגונים בישראל.",
+        "description": "מערכות ניהול לעסקים וסוכני AI שעובדים עליהן: מענה ללקוחות, גבייה, קביעת תורים ודיווח, בטלפון, בוואטסאפ ובמערכות.",
         "telephone": "+972-55-673-8802",
         "email": "z6738802@gmail.com",
         "founder": { "@id": "https://tzvi-mark.uk/#person" },
@@ -371,14 +50,13 @@
         "sameAs": ["https://wa.me/972556738802"],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "שירותי MARK אוטומציות",
+          "name": "שירותי MARK",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "מערכות IVR בימות המשיח" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "אוטומציות N8N" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "מערכות CRM" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "פורטלים ואתרים" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "אינטגרציות מערכות" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "דוחות ודשבורדים" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "מערכות ניהול ו-CRM לעסקים" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "סוכני AI למענה ללקוחות" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "גבייה ותזכורות אוטומטיות" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "מערכות טלפוניות IVR בימות המשיח" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "אוטומציות ואינטגרציות" } }
           ]
         }
       },
@@ -387,277 +65,1076 @@
         "@id": "https://tzvi-mark.uk/#person",
         "name": "צביקי מרק",
         "alternateName": ["צבי מרק", "Tzviki Mark", "Tzvi Mark"],
-        "jobTitle": "מייסד ומפתח מערכות אוטומציה",
+        "jobTitle": "מייסד MARK",
         "url": "https://tzvi-mark.uk/",
-        "telephone": "+972-55-673-8802",
-        "email": "z6738802@gmail.com",
         "worksFor": { "@id": "https://tzvi-mark.uk/#business" },
-        "knowsAbout": ["אוטומציה עסקית", "N8N", "ימות המשיח", "Origami", "Supabase", "מערכות IVR", "CRM"]
+        "knowsAbout": ["סוכני AI", "מערכות ניהול", "אוטומציה עסקית", "N8N", "ימות המשיח", "Origami", "Supabase"]
       },
       {
         "@type": "WebSite",
         "@id": "https://tzvi-mark.uk/#website",
         "url": "https://tzvi-mark.uk/",
-        "name": "MARK אוטומציות",
+        "name": "MARK",
         "inLanguage": "he-IL",
         "publisher": { "@id": "https://tzvi-mark.uk/#business" }
       }
     ]
   }
   </script>
+
+  <style>
+    /* MARK palette (from version 1): ink, teal, signal, paper */
+    :root {
+      --ink-950: #0A0E12;
+      --ink-900: #11171D;
+      --ink-800: #182028;
+      --ink-700: #232C35;
+      --ink-300: #9BA6B1;
+      --ink-50:  #EEF2F4;
+      --paper:   #F5F3EE;
+      --white:   #FFFFFF;
+      --line:    #E2DED5;
+      --text:    #12171C;
+      --text-dim:#575F68;
+      --teal:    #12C9A6;
+      --teal-deep:#0E5C4F;
+      --teal-ink:#00745F;
+      --signal:  #F2B544;
+      --logo-grad: linear-gradient(120deg, #1BD6A0 0%, #12B5C4 45%, #1D6BF5 100%);
+
+      --font: 'Heebo', system-ui, sans-serif;
+      --pill: 999px;
+      --section: 136px;
+      --max: 1180px; --gutter: 24px;
+      --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    @media (max-width: 760px) { :root { --section: 96px; --gutter: 16px; } }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font); font-size: 17px; line-height: 1.65;
+      background: var(--ink-950); color: var(--ink-50);
+      direction: rtl; text-align: right; overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button { font: inherit; color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+    .num { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+    .skip { position: absolute; top: -100px; right: 16px; z-index: 300; background: var(--signal); color: var(--ink-950); padding: 10px 16px; border-radius: 10px; font-weight: 800; text-decoration: none; }
+    .skip:focus { top: 16px; }
+    :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 6px; }
+    svg.ic { width: 22px; height: 22px; stroke-width: 2; flex-shrink: 0; }
+    .grain { position: relative; isolation: isolate; }
+    .grain::after { content: ""; position: absolute; inset: 0; background-image: var(--grain); mix-blend-mode: soft-light; opacity: .85; pointer-events: none; z-index: 0; border-radius: inherit; }
+    .grain > * { position: relative; z-index: 1; }
+
+    /* buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 54px; padding: 0 28px; border-radius: var(--pill);
+      font-weight: 800; font-size: 17px; text-decoration: none; cursor: pointer;
+      border: 2.5px solid var(--ink-950); background: var(--white); color: var(--ink-950);
+      transition: transform .2s ease, background-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-teal { background: var(--teal); }
+    .btn-teal:hover { background: #2BDDBA; }
+    .btn-ghost { background: transparent; border-color: var(--ink-700); color: var(--ink-50); }
+    .btn-round { width: 54px; padding: 0; }
+    .light .btn-teal { background: var(--teal-ink); color: #fff; border-color: var(--teal-ink); }
+
+    /* floating CTA, like the reference's side tab */
+    .float-cta {
+      position: fixed; left: 0; bottom: 28px; z-index: 90;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--white); color: var(--ink-950); text-decoration: none; font-weight: 800; font-size: 15px;
+      padding: 12px 22px 12px 18px; border-radius: 0 var(--pill) var(--pill) 0; border: 2.5px solid var(--ink-950); border-left: 0;
+      transform: translateX(-110%); visibility: hidden; transition: transform .35s ease, visibility .35s;
+    }
+    .float-cta.show { transform: none; visibility: visible; }
+    .float-cta svg { color: var(--teal-ink); }
+
+    /* nav */
+    .nav { position: absolute; inset: 0 0 auto 0; z-index: 50; }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--white); }
+    .brand img { width: 46px; height: auto; filter: brightness(0) invert(1); }
+    .brand span { font-weight: 900; font-size: 26px; letter-spacing: .06em; direction: ltr; }
+    .nav .btn { min-height: 46px; padding: 0 20px; font-size: 15px; }
+
+    /* ---------- HERO ---------- */
+    .hero { position: relative; background: var(--logo-grad); overflow: hidden; }
+    .poster {
+      position: relative; z-index: 2;
+      width: min(540px, calc(100% - 2 * var(--gutter)));
+      margin: 0 auto; padding: 116px 40px 150px;
+      background: var(--white); color: var(--ink-950); text-align: center;
+      will-change: transform;
+    }
+    .poster::before, .poster::after { content: ""; position: absolute; top: 0; bottom: 0; width: 8px; background: var(--ink-950); opacity: .9; }
+    .poster::before { right: -18px; } .poster::after { left: -18px; }
+    .kicker { font-size: 16px; font-weight: 700; color: var(--text-dim); max-width: 32ch; margin: 0 auto; line-height: 1.5; }
+    .dash { border-top: 3px dashed var(--ink-950); margin: 26px 0 22px; }
+    .hero h1 { font-weight: 900; line-height: .98; letter-spacing: -.02em; }
+    .hero h1 .l1 { display: block; font-size: clamp(30px, 4.2vw, 46px); }
+    .hero h1 .l2 { display: block; font-size: clamp(64px, 9.6vw, 116px); line-height: .92; margin: 4px 0 10px; }
+    .type { display: block; font-size: clamp(24px, 3vw, 34px); color: var(--teal-ink); min-height: 1.3em; }
+    .type .caret { display: inline-block; width: 3px; height: .9em; background: var(--ink-950); margin-inline-start: 3px; vertical-align: -0.1em; animation: blink .9s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .tag { margin-top: 14px; font-weight: 800; font-size: 16px; }
+    .hero-cta { display: flex; gap: 10px; justify-content: center; margin-top: 26px; }
+
+    /* the control panel illustration */
+    .panel { position: relative; z-index: 3; margin-top: -132px; will-change: transform, filter; }
+    .panel svg { display: block; width: 100%; height: auto; }
+    .p-fill { fill: var(--ink-950); }
+    .p-line { fill: none; stroke: var(--white); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .p-thin { fill: none; stroke: var(--white); stroke-width: 2.5; stroke-linecap: round; }
+    .p-text { fill: var(--white); font-family: var(--font); font-weight: 800; }
+    .p-lbl { fill: var(--ink-300); font-family: var(--font); font-weight: 700; font-size: 19px; }
+    .needle { transform-box: view-box; animation: sweep 6s ease-in-out infinite alternate; }
+    .needle.n2 { animation-duration: 4.2s; animation-delay: -1s; }
+    .needle.n3 { animation-duration: 7.5s; animation-delay: -3s; }
+    @keyframes sweep { 0% { transform: rotate(-60deg); } 35% { transform: rotate(25deg); } 60% { transform: rotate(5deg); } 100% { transform: rotate(70deg); } }
+    .led { fill: var(--ink-700); }
+    .led.on { fill: var(--teal); }
+    .led.warn.on { fill: var(--signal); }
+    .sw-knob { transition: transform .4s ease; }
+    @media (max-width: 760px) {
+      .poster { padding: 100px 18px 110px; width: 100%; }
+      .poster::before, .poster::after { display: none; }
+      .brand { color: var(--ink-950); } .brand img { filter: none; }
+      .panel { margin-top: -80px; overflow: hidden; }
+      .panel svg { width: 210%; max-width: none; transform: translateX(26%); }
+    }
+
+    /* after-hero statement with sliding pills (reference's black section) */
+    .statement { background: var(--ink-950); padding: 40px 0 var(--section); text-align: center; position: relative; z-index: 4; overflow: hidden; }
+    .statement p.big { font-size: clamp(22px, 2.6vw, 30px); font-weight: 700; line-height: 1.5; max-width: 34ch; margin: 0 auto; }
+    .statement p.big em { font-style: normal; color: var(--teal); }
+    .pills-row { margin-top: 48px; display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+    .bigpill {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: var(--white); color: var(--ink-950); border-radius: var(--pill);
+      padding: 10px 22px 10px 10px; min-height: 76px; font-weight: 800; font-size: 17px; line-height: 1.25; text-align: right;
+    }
+    .bigpill .dot { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; border: 2.5px solid var(--ink-950); flex-shrink: 0; }
+    .bigpill .dot svg { width: 26px; height: 26px; }
+    .bigpill:nth-child(1) .dot { background: var(--teal); }
+    .bigpill:nth-child(2) .dot { background: var(--signal); }
+    .bigpill:nth-child(3) .dot { background: #8FE3F0; }
+    .bigpill:nth-child(4) .dot { background: #B7F2DE; }
+
+    /* marquee */
+    .marquee { background: var(--logo-grad); overflow: hidden; border-block: 3px solid var(--ink-950); }
+    .marquee-track { display: flex; width: max-content; animation: slide 40s linear infinite; }
+    .marquee-track span { display: inline-flex; align-items: center; gap: 28px; padding: 16px 14px; font-weight: 900; font-size: clamp(22px, 3vw, 34px); color: var(--white); white-space: nowrap; }
+    .marquee-track span:nth-child(odd) { color: var(--ink-950); }
+    .marquee-track svg { width: 26px; height: 26px; }
+    @keyframes slide { from { transform: translateX(0); } to { transform: translateX(50%); } }
+
+    /* section heads */
+    .sec { padding: var(--section) 0; }
+    .over { font-weight: 800; font-size: 16px; color: var(--teal); margin-bottom: 10px; display: block; }
+    .light .over { color: var(--teal-ink); }
+    .h2 { font-weight: 900; font-size: clamp(36px, 5.2vw, 64px); line-height: 1.04; letter-spacing: -.015em; }
+    .lead { margin-top: 18px; font-size: 19px; color: var(--ink-300); max-width: 52ch; }
+    .light .lead { color: var(--text-dim); }
+    .center { text-align: center; }
+    .center .h2, .center .lead { margin-inline: auto; }
+
+    /* ---------- DEMO ---------- */
+    .demo-intro { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; margin-bottom: 36px; }
+    @media (max-width: 760px) { .demo-intro { grid-template-columns: 1fr; } }
+    .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 18px;
+      border-radius: var(--pill); border: 2px solid var(--ink-700); background: transparent; color: var(--ink-300);
+      font-weight: 700; font-size: 16px; cursor: pointer; transition: all .2s;
+    }
+    .pill:hover { color: var(--ink-50); border-color: var(--ink-300); }
+    .pill[aria-selected="true"] { background: var(--white); color: var(--ink-950); border-color: var(--white); }
+    .pill svg { width: 19px; height: 19px; }
+
+    .ticket { display: grid; grid-template-columns: 300px 1fr; border-radius: 28px; overflow: hidden; background: var(--white); color: var(--ink-950); }
+    .stub { background: var(--teal); color: var(--ink-950); padding: 32px 28px; display: flex; flex-direction: column; gap: 18px; border-inline-end: 3px dashed var(--ink-950); position: relative; }
+    .stub .badge { width: 84px; height: 84px; border-radius: 50%; background: var(--white); border: 2.5px solid var(--ink-950); display: grid; place-items: center; }
+    .stub .badge svg { width: 38px; height: 38px; }
+    .stub h3 { font-size: 28px; font-weight: 900; line-height: 1.1; }
+    .stub dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 15px; }
+    .stub dt { color: #0B3B33; }
+    .stub dd { font-weight: 800; }
+    .stub dd.num { text-align: right; }
+    .meters { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .meter { background: var(--white); border: 2.5px solid var(--ink-950); border-radius: 16px; padding: 10px 12px; }
+    .meter small { display: block; font-size: 12.5px; font-weight: 800; color: var(--text-dim); }
+    .meter .num { font-size: 28px; font-weight: 900; line-height: 1.1; display: block; text-align: right; }
+    .feed { padding: 28px 32px; min-height: 540px; display: flex; flex-direction: column; }
+    .feed-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 12px; border-bottom: 2.5px solid var(--ink-950); font-weight: 900; font-size: 18px; }
+    .feed-head small { font-weight: 500; color: var(--text-dim); font-size: 14px; }
+    .replay { background: none; border: 0; display: inline-flex; gap: 6px; align-items: center; font-weight: 800; font-size: 15px; cursor: pointer; min-height: 44px; color: var(--ink-950); text-decoration: underline; text-underline-offset: 4px; }
+    .lines { list-style: none; flex: 1; display: flex; flex-direction: column; padding-top: 10px; }
+    .line { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; padding: 9px 0; animation: pop .45s cubic-bezier(.2,.9,.3,1.3) both; }
+    @keyframes pop { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    .line .who { width: 40px; height: 40px; border-radius: 50%; border: 2.5px solid var(--ink-950); display: grid; place-items: center; }
+    .line .who svg { width: 19px; height: 19px; }
+    .line.user .who { background: var(--white); }
+    .line.agent .who { background: var(--teal); }
+    .line.log .who { background: var(--signal); }
+    .line.act .who { background: var(--ink-950); color: var(--teal); }
+    .line .lbl { font-size: 13px; font-weight: 800; color: var(--text-dim); display: block; line-height: 1.3; }
+    .line .txt { font-size: 17px; font-weight: 500; line-height: 1.5; }
+    .line.agent .txt { font-weight: 800; }
+    .line .res { display: inline-block; margin-top: 4px; font-size: 14px; font-weight: 800; background: #FDF0D2; border: 2px solid var(--ink-950); padding: 0 10px; border-radius: var(--pill); }
+    .line.act .txt { font-weight: 900; font-size: 16px; background: var(--teal); border: 2px solid var(--ink-950); border-radius: 12px; padding: 4px 12px; display: inline-block; margin-top: 2px; }
+    .typing { display: inline-flex; gap: 5px; padding: 8px 0 0; }
+    .typing b { width: 7px; height: 7px; border-radius: 50%; background: var(--ink-950); animation: dot 1s infinite; }
+    .typing b:nth-child(2) { animation-delay: .15s; } .typing b:nth-child(3) { animation-delay: .3s; }
+    @keyframes dot { 0%,60%,100% { opacity: .25; } 30% { opacity: 1; } }
+    .demo-note { margin-top: 24px; font-size: 14px; color: var(--ink-300); }
+    @media (max-width: 860px) {
+      .ticket { grid-template-columns: 1fr; }
+      .stub { border-inline-end: 0; border-bottom: 3px dashed var(--ink-950); display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 14px 16px; padding: 22px 18px; }
+      .stub .badge { width: 64px; height: 64px; } .stub .badge svg { width: 30px; height: 30px; }
+      .stub h3 { font-size: 24px; }
+      .stub dl, .meters { grid-column: 1 / -1; }
+      .feed { padding: 20px 18px; min-height: 500px; }
+      .feed-head small { display: none; }
+    }
+
+    /* ---------- MASCOT BAND (reference's pilot band) ---------- */
+    .band { background: var(--logo-grad); position: relative; overflow: visible; }
+    .band .wrap { display: grid; grid-template-columns: 300px 1fr; align-items: center; gap: 40px; min-height: 300px; }
+    .band-txt { color: var(--ink-950); }
+    .band-txt h2 { font-size: clamp(30px, 3.8vw, 46px); font-weight: 900; line-height: 1.1; }
+    .band-txt h2 span { color: var(--white); }
+    .band-txt p { font-size: 19px; font-weight: 600; margin-top: 8px; }
+    .band-txt .btn { margin-top: 20px; }
+    .robot { width: 300px; height: 360px; margin: -60px 0 -60px; }
+    .robot .r-body { animation: bob 2.6s ease-in-out infinite; transform-origin: 150px 300px; }
+    .robot .r-arm { animation: point 1.3s ease-in-out infinite; transform-origin: 196px 196px; }
+    .robot .r-eye { animation: look 5s ease-in-out infinite; }
+    .robot .r-ant { animation: ant 1.6s ease-in-out infinite; transform-origin: 150px 86px; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes point { 0%,100% { transform: rotate(0deg); } 50% { transform: rotate(-7deg); } }
+    @keyframes look { 0%,40%,100% { transform: translateX(0); } 50%,90% { transform: translateX(5px); } }
+    @keyframes ant { 0%,100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
+    @media (max-width: 760px) {
+      .band .wrap { grid-template-columns: 1fr; text-align: center; padding-block: 48px; gap: 8px; }
+      .robot { width: 200px; height: 240px; margin: -110px auto 0; }
+    }
+
+    /* ---------- BRIDGE: house that draws itself ---------- */
+    .bridge { text-align: center; }
+    .bridge h2 { font-size: clamp(36px, 5.6vw, 72px); font-weight: 900; line-height: 1.05; max-width: 15ch; margin: 0 auto; }
+    .bridge h2 .w { opacity: .18; transition: opacity .25s; }
+    .bridge h2 .w.lit { opacity: 1; }
+    .bridge h2 .w.hot { color: var(--signal); }
+    .bridge > .wrap > p { margin: 24px auto 0; font-size: 20px; color: var(--ink-300); max-width: 46ch; }
+    .house { width: min(560px, 100%); margin: 56px auto 0; display: block; overflow: visible; }
+    .house .d { fill: none; stroke: var(--white); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+    .house .hw { fill: var(--ink-900); stroke: var(--white); stroke-width: 5; transition: fill .4s ease; }
+    .house .hw.on { fill: var(--signal); }
+    .house .hl { fill: var(--ink-300); font-family: var(--font); font-weight: 800; font-size: 20px; }
+
+    /* compare as two houses */
+    .houses { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 72px; text-align: right; }
+    .house-card { position: relative; padding: 120px 34px 36px; }
+    .house-card .shape { position: absolute; inset: 0; z-index: 0; }
+    .house-card .shape svg { width: 100%; height: 100%; display: block; overflow: visible; }
+    .house-card > :not(.shape) { position: relative; z-index: 1; }
+    .house-card h3 { font-size: 30px; font-weight: 900; line-height: 1.1; text-align: center; }
+    .house-card ul { list-style: none; margin-top: 24px; display: grid; gap: 16px; }
+    .house-card li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; font-size: 16.5px; line-height: 1.5; }
+    .house-card .mk { width: 28px; height: 28px; border-radius: 50%; border: 2.5px solid currentColor; display: grid; place-items: center; margin-top: 1px; }
+    .house-card .mk svg { width: 14px; height: 14px; stroke-width: 3.5; }
+    .house-card li b { display: block; font-weight: 900; }
+    .house-card.bad { color: var(--ink-50); }
+    .house-card.bad .mk { color: #FF8A73; }
+    .house-card.bad li span { color: var(--ink-300); }
+    .house-card.good { color: var(--ink-950); }
+    .house-card.good .mk { background: var(--teal); color: var(--ink-950); }
+    .house-card.good li span { color: var(--text-dim); }
+    @media (max-width: 860px) { .houses { grid-template-columns: 1fr; } .house-card { padding: 104px 22px 30px; } }
+
+    /* ---------- METHOD (paper) ---------- */
+    .light { background: var(--paper); color: var(--text); }
+    .steps { margin-top: 72px; display: grid; gap: 88px; }
+    .step { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .step:nth-child(even) .step-art { order: -1; }
+    .step .no { width: 64px; height: 64px; border-radius: 50%; border: 2.5px solid var(--ink-950); display: grid; place-items: center; font-size: 30px; font-weight: 900; margin-bottom: 18px; background: var(--teal); }
+    .step:nth-child(2) .no { background: var(--signal); }
+    .step h3 { font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; line-height: 1.08; }
+    .step p { margin-top: 14px; font-size: 18px; color: var(--text-dim); max-width: 44ch; }
+    .motto { display: inline-flex; margin-top: 22px; font-weight: 900; font-size: 20px; background: var(--signal); border: 2.5px solid var(--ink-950); border-radius: var(--pill); padding: 6px 18px; }
+    .step-art { border-radius: 28px; padding: 28px; background: var(--ink-950); }
+    @media (max-width: 860px) { .step { grid-template-columns: 1fr; gap: 28px; } .step:nth-child(even) .step-art { order: 0; } .step-art { padding: 16px; } }
+
+    .rec { background: var(--white); border: 2.5px solid var(--ink-950); border-radius: 18px; overflow: hidden; }
+    .rec-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 2.5px solid var(--ink-950); font-weight: 900; font-size: 18px; }
+    .rec-head .st { font-size: 13px; font-weight: 800; background: var(--teal); border: 2px solid var(--ink-950); border-radius: var(--pill); padding: 1px 10px; }
+    .rec-row { display: grid; grid-template-columns: 116px 1fr; gap: 12px; padding: 10px 18px; border-bottom: 1.5px dashed var(--line); font-size: 16px; }
+    .rec-row span { color: var(--text-dim); }
+    .rec-row b { font-weight: 700; }
+    .rec-row b.num { text-align: right; }
+    .rec-row.cut { color: #9A968C; font-size: 14.5px; padding: 6px 18px; }
+    .rec-row.cut span, .rec-row.cut b { color: inherit; text-decoration: line-through; font-weight: 500; }
+    .rec-foot { padding: 12px 18px; font-size: 14px; font-weight: 800; background: #EFEDE6; }
+
+    .board { display: grid; gap: 12px; }
+    .sw { display: grid; grid-template-columns: 52px 1fr 64px; gap: 14px; align-items: center; background: var(--white); border-radius: 18px; padding: 12px 16px; }
+    .sw .ico { width: 52px; height: 52px; border-radius: 50%; border: 2.5px solid var(--ink-950); display: grid; place-items: center; }
+    .sw:nth-child(1) .ico { background: var(--teal); } .sw:nth-child(2) .ico { background: var(--signal); }
+    .sw:nth-child(3) .ico { background: #8FE3F0; } .sw:nth-child(4) .ico { background: #B7F2DE; }
+    .sw h4 { font-size: 18px; font-weight: 900; line-height: 1.2; }
+    .sw p { font-size: 14.5px; color: var(--text-dim); line-height: 1.4; }
+    .toggle { width: 64px; height: 34px; border-radius: var(--pill); border: 2.5px solid var(--ink-950); background: var(--ink-700); position: relative; transition: background-color .35s; }
+    .toggle::after { content: ""; position: absolute; top: 3px; right: 3px; width: 23px; height: 23px; border-radius: 50%; background: var(--white); border: 2.5px solid var(--ink-950); transition: right .35s cubic-bezier(.3,1.4,.5,1); }
+    .toggle.on { background: var(--teal); }
+    .toggle.on::after { right: 32px; }
+    @media (max-width: 420px) { .sw { grid-template-columns: 44px 1fr; } .sw .ico { width: 44px; height: 44px; } .toggle { display: none; } }
+
+    .outs { margin-top: 112px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .out { text-align: center; }
+    .out .bubble { width: 96px; height: 96px; margin: 0 auto 16px; border-radius: 50%; border: 2.5px solid var(--ink-950); display: grid; place-items: center; background: var(--white); }
+    .out .bubble svg { width: 42px; height: 42px; stroke-width: 1.8; }
+    .out h3 { font-size: 20px; font-weight: 900; line-height: 1.2; }
+    .out p { margin-top: 6px; color: var(--text-dim); font-size: 16px; }
+    @media (max-width: 900px) { .outs { grid-template-columns: 1fr 1fr; gap: 40px 16px; } }
+
+    /* ---------- WORK ---------- */
+    .works { margin-top: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 22px; }
+    .work { position: relative; padding-top: 46px; }
+    .work .medal { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 92px; height: 92px; border-radius: 50%; border: 2.5px solid var(--ink-950); background: var(--white); color: var(--ink-950); display: grid; place-items: center; z-index: 2; }
+    .work .medal svg { width: 40px; height: 40px; stroke-width: 1.8; }
+    .work .card { border-radius: 26px; overflow: hidden; background: var(--white); color: var(--ink-950); height: 100%; display: flex; flex-direction: column; }
+    .work .top { background: var(--teal); padding: 62px 20px 24px; text-align: center; border-bottom: 3px dashed var(--ink-950); }
+    .work:nth-child(even) .top { background: var(--signal); }
+    .work .top { min-height: 156px; display: flex; align-items: center; justify-content: center; }
+    .work h3 { font-size: 21px; font-weight: 900; line-height: 1.2; }
+    .work .bottom { padding: 20px; text-align: center; font-size: 16px; color: var(--text-dim); flex: 1; }
+    .works { row-gap: 44px; }
+    .work .medal img { width: 72%; height: 72%; object-fit: contain; border-radius: 50%; }
+    .work .top { flex-direction: column; gap: 4px; min-height: 150px; }
+    .work .top small { font-size: 14.5px; font-weight: 700; color: #123; opacity: .8; }
+    .work .bottom a { display: flex; justify-content: center; align-items: center; gap: 4px; margin-top: 10px; font-weight: 800; color: var(--teal-ink); min-height: 44px; }
+    .work .bottom a svg { width: 16px; height: 16px; }
+
+    /* responsibility ticket */
+    .resp { display: grid; grid-template-columns: 1fr 1.3fr; border-radius: 28px; overflow: hidden; }
+    .resp .l { background: var(--logo-grad); padding: 44px 36px; display: flex; align-items: center; border-inline-end: 3px dashed var(--ink-950); color: var(--ink-950); }
+    .resp .l h2 { font-size: clamp(34px, 4.4vw, 54px); font-weight: 900; line-height: 1.04; }
+    .resp .l h2 span { color: var(--white); }
+    .resp .r { background: var(--white); color: var(--ink-950); padding: 40px 36px; }
+    .resp ul { list-style: none; display: grid; gap: 16px; }
+    .resp li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; font-size: 17.5px; font-weight: 500; }
+    .resp li svg { color: var(--teal-ink); margin-top: 3px; }
+    .resp .about { margin-top: 24px; padding-top: 18px; border-top: 2px dashed var(--line); font-size: 15.5px; color: var(--text-dim); }
+    @media (max-width: 860px) { .resp { grid-template-columns: 1fr; } .resp .l { border-inline-end: 0; border-bottom: 3px dashed var(--ink-950); padding: 32px 22px; } .resp .r { padding: 28px 22px; } }
+
+    /* faq */
+    .faq { max-width: 820px; margin: 56px auto 0; display: grid; gap: 12px; }
+    .faq details { background: var(--white); color: var(--ink-950); border-radius: 22px; }
+    .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 16px 22px; font-weight: 900; font-size: 19px; min-height: 64px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq .pm { width: 34px; height: 34px; border-radius: 50%; border: 2.5px solid var(--ink-950); display: grid; place-items: center; flex-shrink: 0; transition: transform .25s, background-color .25s; }
+    .faq .pm svg { width: 16px; height: 16px; stroke-width: 3; }
+    .faq details[open] .pm { transform: rotate(45deg); background: var(--teal); }
+    .faq details p { padding: 0 22px 20px; color: var(--text-dim); font-size: 17px; max-width: 62ch; }
+
+    /* contact */
+    .contact { background: var(--logo-grad); }
+    .contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .contact .h2 { color: var(--ink-950); }
+    .contact .lead { color: var(--ink-950); font-weight: 500; }
+    .direct { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .direct .btn { font-size: 16px; }
+    form.lead-form { background: var(--white); color: var(--ink-950); border: 2.5px solid var(--ink-950); border-radius: 28px; padding: 32px; display: grid; gap: 16px; }
+    .lead-form h3 { font-size: 24px; font-weight: 900; }
+    .ff { display: grid; gap: 6px; }
+    .ff label { font-size: 15px; font-weight: 800; }
+    .ff input, .ff textarea { width: 100%; background: var(--paper); border: 2px solid var(--ink-950); border-radius: 14px; padding: 12px 14px; font: inherit; font-size: 16px; min-height: 50px; color: var(--ink-950); text-align: right; }
+    .ff input:focus, .ff textarea:focus { outline: none; box-shadow: 0 0 0 4px var(--teal); background: var(--white); }
+    .ff textarea { min-height: 104px; resize: vertical; }
+    .ff .err { display: none; font-size: 14px; font-weight: 700; color: #B42318; }
+    .ff.bad input { border-color: #B42318; }
+    .ff.bad .err { display: block; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .lead-form .btn { width: 100%; }
+    .fine { font-size: 13.5px; color: var(--text-dim); text-align: center; }
+    .ok { display: none; gap: 8px; align-items: center; justify-content: center; font-weight: 800; color: var(--teal-ink); }
+    .ok.show { display: flex; }
+    @media (max-width: 900px) { .contact .wrap { grid-template-columns: 1fr; gap: 40px; } }
+    @media (max-width: 480px) { .two { grid-template-columns: 1fr; } form.lead-form { padding: 24px 18px; } }
+
+    footer { background: var(--ink-950); color: var(--ink-300); padding: 30px 0; font-size: 15px; }
+    footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+    footer a { text-decoration: none; color: var(--white); font-weight: 700; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .bridge h2 .w { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip" href="#main">דלגו לתוכן</a>
+  <a class="float-cta" id="float-cta" href="#contact"><svg class="ic" data-i="message-circle"></svg>לשיחת היכרות</a>
 
-  <!-- NAV -->
-  <nav>
-    <img src="logo.png" class="nav-logo" alt="MARK אוטומציות — צביקי מרק">
-    <div class="nav-links">
-      <a href="#clients">לקוחות</a>
-      <a href="#services">שירותים</a>
-      <a href="#about">מי אנחנו</a>
-      <a href="#contact">צור קשר</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="spark" viewBox="0 0 40 40"><path d="M20 2c1.6 9.4 8.6 16.4 18 18-9.4 1.6-16.4 8.6-18 18-1.6-9.4-8.6-16.4-18-18C11.4 18.4 18.4 11.4 20 2Z" fill="currentColor" stroke="#0A0E12" stroke-width="2.5" stroke-linejoin="round"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="MARK, לראש הדף">
+        <img src="logo-mark.png" alt="" width="46" height="20">
+        <span>MARK</span>
+      </a>
+      <a class="btn" href="#contact">לשיחת היכרות</a>
     </div>
-    <a href="https://wa.me/972556738802" target="_blank" class="nav-cta">
-      <i data-lucide="message-circle" style="width:15px;height:15px"></i>
-      בואו נדבר
-    </a>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          אוטומציות עסקיות חכמות
-        </div>
-        <h1>המערכות שמריצות<br>את <em>העסק שלך</em></h1>
-        <p class="hero-sub">
-          בונים מערכות אוטומציה, IVR, פורטלים ואינטגרציות — שחוסכות זמן, מפחיתות טעויות ומשחררות אתכם להתמקד בעיקר.
-        </p>
-        <div class="hero-actions">
-          <a href="https://wa.me/972556738802" target="_blank" class="btn-main">
-            <i data-lucide="message-circle" style="width:16px;height:16px"></i>
-            וואטסאפ
-          </a>
-          <a href="#services" class="btn-ghost">
-            <i data-lucide="arrow-left" style="width:16px;height:16px"></i>
-            השירותים שלנו
-          </a>
+  <main id="main">
+    <!-- HERO: poster + control panel -->
+    <section class="hero grain" id="top" aria-labelledby="hero-h">
+      <div class="poster" id="poster">
+        <p class="kicker">MARK בונה לעסק מערכת ניהול מסודרת, ומעמידה עליה סוכני AI שעושים את העבודה.</p>
+        <div class="dash" aria-hidden="true"></div>
+        <h1 id="hero-h">
+          <span class="l1">סוכן AI</span>
+          <span class="l2">שעובד</span>
+          <span class="type" aria-live="off"><span id="type">גם כשאתם ישנים.</span><span class="caret" aria-hidden="true"></span></span>
+        </h1>
+        <p class="tag">ואנחנו אחראים שזה עובד.</p>
+        <div class="hero-cta">
+          <a class="btn btn-teal" href="#contact">בואו נדבר</a>
+          <a class="btn btn-round" href="#demo" aria-label="לראות את הסוכן בעבודה"><svg class="ic" data-i="arrow-down"></svg></a>
         </div>
       </div>
-      <div class="hero-visual">
-        <img src="logo.png" class="hero-logo-large" alt="MARK Automations — מערכות אוטומציה לעסקים" loading="lazy">
+
+      <div class="panel" id="panel" aria-hidden="true">
+        <svg viewBox="0 0 1440 470" preserveAspectRatio="xMidYMax meet">
+          <!-- dashboard body -->
+          <path class="p-fill" d="M0 150 C 300 64, 560 40, 720 40 C 880 40, 1140 64, 1440 150 V470 H0 Z"/>
+          <path class="p-line" d="M0 150 C 300 64, 560 40, 720 40 C 880 40, 1140 64, 1440 150"/>
+          <path class="p-thin" d="M330 120 V440 M1110 120 V440"/>
+          <circle class="p-thin" cx="345" cy="132" r="7"/><circle class="p-thin" cx="1095" cy="132" r="7"/>
+
+          <!-- gauge 1: calls -->
+          <g transform="translate(470 220)">
+            <circle class="p-line" r="86"/>
+            <g class="p-thin"><path d="M0-86v14"/><path d="M61-61l-10 10"/><path d="M86 0h-14"/><path d="M61 61l-10-10"/><path d="M-61 61l10-10"/><path d="M-86 0h14"/><path d="M-61-61l10 10"/></g>
+            <g class="needle"><path class="p-line" d="M0 0 L0 -62"/></g>
+            <circle r="9" fill="#FFFFFF"/>
+            <text class="p-lbl" y="130" text-anchor="middle">שיחות</text>
+          </g>
+          <!-- gauge 2: horizon-like "collections" -->
+          <g transform="translate(720 210)">
+            <circle class="p-line" r="96"/>
+            <g class="p-thin"><path d="M-70 0h40M30 0h40"/><path d="M-30 22h60M-20 42h40M-30-22h60M-20-42h40"/></g>
+            <g class="needle n2"><path class="p-line" d="M0 0 L0 -74"/><path class="p-thin" d="M-14-58 L0-74 L14-58"/></g>
+            <circle r="10" fill="#FFFFFF"/>
+            <text class="p-lbl" y="140" text-anchor="middle">גבייה</text>
+          </g>
+          <!-- gauge 3: clock / appointments -->
+          <g transform="translate(970 220)">
+            <circle class="p-line" r="86"/>
+            <g class="p-thin"><path d="M0-86v14M86 0h-14M0 86v-14M-86 0h14"/></g>
+            <g class="needle n3"><path class="p-line" d="M0 0 L0 -64"/></g>
+            <path class="p-line" d="M0 0 L36 10"/>
+            <circle r="9" fill="#FFFFFF"/>
+            <text class="p-lbl" y="130" text-anchor="middle">תורים</text>
+          </g>
+
+          <!-- right cluster: leds + knobs -->
+          <g transform="translate(130 210)">
+            <rect class="p-thin" x="-10" y="-56" width="170" height="64" rx="10"/>
+            <text class="p-text" x="75" y="-13" text-anchor="middle" font-size="34" id="p-count">₪84,300</text>
+            <g id="leds"><circle class="led on" cx="0" cy="40" r="9"/><circle class="led" cx="30" cy="40" r="9"/><circle class="led warn" cx="60" cy="40" r="9"/><circle class="led" cx="90" cy="40" r="9"/><circle class="led" cx="120" cy="40" r="9"/><circle class="led on" cx="150" cy="40" r="9"/></g>
+            <g class="p-line"><circle cx="10" cy="110" r="22"/><circle cx="75" cy="110" r="22"/><circle cx="140" cy="110" r="22"/></g>
+            <g class="p-line"><path d="M10 110 l0 -16"/><path d="M75 110 l12 -10"/><path d="M140 110 l-12 -10"/></g>
+          </g>
+          <!-- left cluster: digital readout + switches -->
+          <g transform="translate(1160 160)">
+            <rect class="p-thin" x="0" y="0" width="200" height="64" rx="10"/>
+            <path class="p-thin" d="M100 0v64"/>
+            <text class="p-text num" x="50" y="44" text-anchor="middle" font-size="30" id="p-clock">22:40</text>
+            <text class="p-text" x="150" y="44" text-anchor="middle" font-size="30" id="p-zero">0</text>
+            <text class="p-lbl" x="150" y="94" text-anchor="middle" font-size="16">עובדים</text>
+            <text class="p-lbl" x="50" y="94" text-anchor="middle" font-size="16">שעה</text>
+            <g id="switches">
+              <g transform="translate(10 130)"><rect class="p-thin" width="32" height="54" rx="16"/><circle class="sw-knob" cx="16" cy="16" r="10" fill="#12C9A6"/></g>
+              <g transform="translate(62 130)"><rect class="p-thin" width="32" height="54" rx="16"/><circle class="sw-knob" cx="16" cy="38" r="10" fill="#FFFFFF"/></g>
+              <g transform="translate(114 130)"><rect class="p-thin" width="32" height="54" rx="16"/><circle class="sw-knob" cx="16" cy="16" r="10" fill="#F2B544"/></g>
+              <g transform="translate(166 130)"><rect class="p-thin" width="32" height="54" rx="16"/><circle class="sw-knob" cx="16" cy="38" r="10" fill="#FFFFFF"/></g>
+            </g>
+          </g>
+          <!-- bottom row -->
+          <g class="p-thin"><path d="M420 400 h600"/></g>
+          <g class="p-line"><rect x="560" y="378" width="40" height="40" rx="8"/><rect x="620" y="378" width="40" height="40" rx="8"/><rect x="680" y="378" width="80" height="40" rx="8"/><rect x="780" y="378" width="40" height="40" rx="8"/><rect x="840" y="378" width="40" height="40" rx="8"/></g>
+        </svg>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CLIENTS -->
-  <section class="clients" id="clients">
-    <div class="section-max">
-      <div class="clients-label">בין לקוחותינו</div>
-      <div class="clients-grid">
-
-        <a href="https://a400600500.com/" target="_blank" class="client-card reveal">
-          <img src="https://mekusharim.tzvi-mark.uk/uploads/7015370.jpg" alt="הקופה המשותפת">
-          <div class="client-name">הקופה המשותפת</div>
-        </a>
-
-        <a href="https://portal.salataifrainde.com/" target="_blank" class="client-card reveal">
-          <img src="https://mekusharim.tzvi-mark.uk/uploads/chef-logo.png" alt="סלטי פריינד">
-          <div class="client-name">סלטי פריינד</div>
-        </a>
-
-        <a href="#" class="client-card reveal">
-          <img src="https://mekusharim.tzvi-mark.uk/uploads/file__1_.PNG" alt="קופת ברידער">
-          <div class="client-name">קופת ברידער</div>
-        </a>
-
-        <a href="https://mekusharim.tzvi-mark.uk/" target="_blank" class="client-card reveal">
-          <img src="https://mekusharim.tzvi-mark.uk/images/logo.png" alt="מקושרים">
-          <div class="client-name">מרכז מוסדות קרלין סטאלין<br>אגף מקושרים</div>
-        </a>
-
-        <a href="#" class="client-card reveal">
-          <img src="https://mekusharim.tzvi-mark.uk/uploads/7002027.jpg" alt="שערי רווחה">
-          <div class="client-name">שערי רווחה — הסעות חסד</div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="section-max">
-      <div class="section-header reveal">
-        <div class="section-tag">מה אנחנו בונים</div>
-        <h2 class="section-title">פתרונות שעובדים<br>בשבילכם <em>24/7</em></h2>
-      </div>
-      <div class="services-grid">
-        <a href="/ivr/" class="service-card reveal">
-          <div class="service-icon"><i data-lucide="phone" style="width:22px;height:22px"></i></div>
-          <h3>מערכות IVR</h3>
-          <p>שלוחות טלפוניות חכמות בימות המשיח — הזמנות, אימות, הודעות ועוד. מותאם לקהל החרדי.</p>
-        </a>
-        <a href="/n8n/" class="service-card reveal">
-          <div class="service-icon"><i data-lucide="zap" style="width:22px;height:22px"></i></div>
-          <h3>אוטומציות N8N</h3>
-          <p>חיבור בין מערכות, טריגרים אוטומטיים, דוחות ותהליכים — בלי קוד מיותר.</p>
-        </a>
-        <a href="/crm/" class="service-card reveal">
-          <div class="service-icon"><i data-lucide="layout-dashboard" style="width:22px;height:22px"></i></div>
-          <h3>מערכות CRM</h3>
-          <p>ניהול לקוחות, חברים ורשומות — עם ממשק שתפור לצרכים שלכם.</p>
-        </a>
-        <a href="/portals/" class="service-card reveal">
-          <div class="service-icon"><i data-lucide="globe" style="width:22px;height:22px"></i></div>
-          <h3>פורטלים ואתרים</h3>
-          <p>ממשקי הזמנה, פורטלי לקוחות ודפי נחיתה — מהירים, נגישים ויפים.</p>
-        </a>
-        <a href="/integrations/" class="service-card reveal">
-          <div class="service-icon"><i data-lucide="link" style="width:22px;height:22px"></i></div>
-          <h3>אינטגרציות</h3>
-          <p>חיבור ל-Origami, Nedarim Plus, WhatsApp, Supabase, וכל מערכת שצריך.</p>
-        </a>
-        <div class="service-card reveal">
-          <div class="service-icon"><i data-lucide="bar-chart-3" style="width:22px;height:22px"></i></div>
-          <h3>דוחות ומעקב</h3>
-          <p>דשבורדים חיים, ייצוא נתונים ולוגים — כדי שתדעו תמיד מה קורה.</p>
+    <!-- STATEMENT with sliding pills -->
+    <section class="statement" aria-label="מה הסוכן עושה">
+      <div class="wrap">
+        <p class="big st-in">כל העבודה השחורה של העסק, <em>טלפונים, גבייה, תורים ודוחות,</em> נעשית לבד. בלי לחכות לבוקר, ובלי שאף עובד יגע בה.</p>
+        <div class="pills-row">
+          <span class="bigpill"><span class="dot"><svg class="ic" data-i="phone-incoming"></svg></span>עונה<br>בטלפון</span>
+          <span class="bigpill"><span class="dot"><svg class="ic" data-i="wallet"></svg></span>גובה חובות<br>פתוחים</span>
+          <span class="bigpill"><span class="dot"><svg class="ic" data-i="calendar-check"></svg></span>קובע<br>תורים</span>
+          <span class="bigpill"><span class="dot"><svg class="ic" data-i="bar-chart"></svg></span>מדווח<br>לבעלים</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
+    <div class="marquee grain" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="section-max">
-      <div class="section-header reveal">
-        <div class="section-tag">מי עומד מאחורי MARK</div>
-        <h2 class="section-title">צביקי מרק —<br>בונה מערכות <em>שעובדות</em></h2>
-      </div>
-      <div class="about-text reveal">
-        <p>
-          שמי צביקי מרק, ואני מייסד MARK אוטומציות. אני בונה מערכות אוטומציה מותאמות אישית לעסקים,
-          לארגוני צדקה ולמוסדות בישראל — מערכות שמחליפות עבודה ידנית חוזרת בתהליך שרץ לבד.
-        </p>
-        <p>
-          ההתמחות שלי היא בשילוב בין שלוחות טלפוניות בימות המשיח, אוטומציות N8N, בסיסי נתונים
-          ב-Supabase ובאוריגמי, וממשקי ווב בעברית מלאה. הרבה מהלקוחות שלי הם ארגונים מהמגזר החרדי,
-          ולכן כל מערכת נבנית עם התאמה מלאה לעברית, ל-RTL ולאופן שבו הקהילה באמת עובדת —
-          מהזמנה בטלפון ועד דוח ניהולי.
-        </p>
-        <p>
-          בין הפרויקטים: מערכות גבייה וחיוב לקופות שכונתיות, מערכות הזמנת הסעות רפואיות,
-          מערכות הזמנת הטבות בשלוחה טלפונית, ופורטלי ניהול למוסדות. כל פרויקט נבנה מאפס
-          לפי התהליך של הארגון, לא לפי תבנית מוכנה.
-        </p>
-        <p>
-          רוצים לבדוק אם התהליך שלכם ניתן לאוטומציה? אפשר לדבר איתי ישירות בוואטסאפ
-          במספר <a href="https://wa.me/972556738802" target="_blank">055-673-8802</a>.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact-section" id="contact">
-    <div class="section-max">
-      <div class="contact-grid">
-        <div class="contact-info reveal">
-          <h2>בואו נבנה<br>משהו יחד</h2>
-          <p>יש לכם רעיון? תהליך שחוזר על עצמו? בעיה שדורשת פתרון חכם? תשאירו פרטים ונחזור אליכם.</p>
-          <div class="contact-links">
-            <a href="https://wa.me/972556738802" target="_blank" class="contact-link">
-              <div class="link-icon wa">
-                <i data-lucide="message-circle" style="width:18px;height:18px"></i>
-              </div>
-              055-673-8802 — וואטסאפ
-            </a>
-            <a href="mailto:z6738802@gmail.com" class="contact-link">
-              <div class="link-icon mail">
-                <i data-lucide="mail" style="width:18px;height:18px"></i>
-              </div>
-              z6738802@gmail.com
-            </a>
+    <!-- DEMO -->
+    <section class="sec" id="demo" aria-labelledby="demo-h">
+      <div class="wrap">
+        <div class="demo-intro">
+          <div>
+            <span class="over rv">נסו בעצמכם</span>
+            <h2 class="h2 rv" id="demo-h">בחרו משימה, ותראו את הסוכן עובד.</h2>
+            <p class="lead rv">כל שורה בכרטיס היא משהו שהסוכן אמר, או משהו שהוא בדק ועדכן במערכת.</p>
           </div>
         </div>
+        <div class="tabs rv" role="tablist" aria-label="משימות לדוגמה" id="tabs"></div>
+        <div class="ticket rv" role="tabpanel" id="tpanel">
+          <aside class="stub">
+            <span class="badge" id="t-icon"></span>
+            <h3 id="t-title"></h3>
+            <dl>
+              <dt>ערוץ</dt><dd id="t-chan"></dd>
+              <dt>שעה</dt><dd class="num" id="t-hour"></dd>
+              <dt>מבצע</dt><dd>סוכן AI</dd>
+            </dl>
+            <div class="meters">
+              <div class="meter"><small>זמן טיפול</small><span class="num" id="t-time">0:00</span></div>
+              <div class="meter"><small>עובדים</small><span class="num">0</span></div>
+            </div>
+          </aside>
+          <div class="feed">
+            <div class="feed-head"><span>כרטיס משימה <small>· מה קרה, שורה אחרי שורה</small></span><button class="replay" type="button" id="replay"><svg class="ic" data-i="rotate-ccw" style="width:17px;height:17px"></svg>מההתחלה</button></div>
+            <ol class="lines" id="lines" aria-live="polite"></ol>
+          </div>
+        </div>
+        <p class="demo-note">התרחישים, השמות והמספרים כאן הם להמחשה. בכל עסק הסוכן נבנה על הנתונים והכללים שלו.</p>
+      </div>
+    </section>
 
-        <div class="contact-form reveal">
+    <!-- MASCOT BAND -->
+    <section class="band grain" aria-labelledby="band-h">
+      <div class="wrap">
+        <svg class="robot" viewBox="0 0 300 360" aria-hidden="true">
+          <g transform="translate(300 0) scale(-1 1)"><g class="r-body">
+            <!-- antenna -->
+            <g class="r-ant"><path d="M150 86 V50" stroke="#0A0E12" stroke-width="5" stroke-linecap="round"/><circle cx="150" cy="44" r="11" fill="#F2B544" stroke="#0A0E12" stroke-width="5"/></g>
+            <!-- head -->
+            <rect x="82" y="86" width="136" height="104" rx="34" fill="#FFFFFF" stroke="#0A0E12" stroke-width="5"/>
+            <rect x="100" y="106" width="100" height="62" rx="22" fill="#0A0E12"/>
+            <g class="r-eye"><ellipse cx="128" cy="136" rx="9" ry="12" fill="#12C9A6"/><ellipse cx="172" cy="136" rx="9" ry="12" fill="#12C9A6"/></g>
+            <path d="M136 156 q14 9 28 0" fill="none" stroke="#12C9A6" stroke-width="4" stroke-linecap="round"/>
+            <path d="M82 138 h-12 M218 138 h12" stroke="#0A0E12" stroke-width="5" stroke-linecap="round"/>
+            <!-- body -->
+            <rect x="96" y="196" width="108" height="92" rx="24" fill="#FFFFFF" stroke="#0A0E12" stroke-width="5"/>
+            <path d="M126 196 l24 26 l24 -26" fill="none" stroke="#0A0E12" stroke-width="5" stroke-linejoin="round"/>
+            <circle cx="150" cy="246" r="12" fill="#12C9A6" stroke="#0A0E12" stroke-width="4"/>
+            <!-- left arm (down) -->
+            <path d="M100 212 q-34 22 -22 62" fill="none" stroke="#0A0E12" stroke-width="14" stroke-linecap="round"/>
+            <path d="M100 212 q-34 22 -22 62" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+            <!-- pointing arm -->
+            <g class="r-arm">
+              <path d="M196 212 L262 176" fill="none" stroke="#0A0E12" stroke-width="14" stroke-linecap="round"/>
+              <path d="M196 212 L262 176" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+              <circle cx="268" cy="172" r="12" fill="#FFFFFF" stroke="#0A0E12" stroke-width="5"/>
+              <path d="M276 166 l16 -9" stroke="#0A0E12" stroke-width="6" stroke-linecap="round"/>
+            </g>
+            <!-- legs -->
+            <path d="M126 288 v34 M174 288 v34" stroke="#0A0E12" stroke-width="10" stroke-linecap="round"/>
+            <rect x="106" y="318" width="40" height="18" rx="9" fill="#0A0E12"/><rect x="154" y="318" width="40" height="18" rx="9" fill="#0A0E12"/>
+          </g></g>
+        </svg>
+        <div class="band-txt">
+          <h2 id="band-h">רוצים סוכן כזה <span>בעסק שלכם?</span></h2>
+          <p>שיחת היכרות קצרה, ונראה לכם מה אפשר להעביר אליו כבר החודש.</p>
+          <a class="btn" href="#contact">קבעו שיחת היכרות <svg class="ic" data-i="arrow-left"></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRIDGE -->
+    <section class="sec bridge" aria-labelledby="bridge-h">
+      <div class="wrap">
+        <h2 id="bridge-h">נשמע מושלם? זה עובד רק כשיש בית מסודר מתחת.</h2>
+        <p>הסוכן ידע מי הלקוח, כמה הוא חייב, מה מותר להציע ואיפה היומן פנוי. כל זה הגיע ממערכת ניהול. בלעדיה, הסוכן ממציא, טועה ומביך את העסק.</p>
+
+        <svg class="house" id="house" viewBox="0 0 560 360" aria-hidden="true">
+          <path class="d" pathLength="1" d="M20 160 L150 40 L280 150 L410 40 L540 160"/>
+          <path class="d" pathLength="1" d="M70 150 L150 82 L280 196 L410 82 L490 150"/>
+          <path class="d" pathLength="1" d="M70 158 V340 H490 V158"/>
+          <path class="d" pathLength="1" d="M250 340 V292 a30 30 0 0 1 60 0 V340"/>
+          <path class="d" pathLength="1" d="M0 340 H560"/>
+          <g id="hwins">
+            <rect class="hw" x="104" y="222" width="80" height="60" rx="10"/>
+            <rect class="hw" x="376" y="222" width="80" height="60" rx="10"/>
+          </g>
+          <text class="hl" x="144" y="312" text-anchor="middle">נתונים</text>
+          <text class="hl" x="416" y="312" text-anchor="middle">כללים</text>
+        </svg>
+
+        <div class="houses">
+          <article class="house-card bad rv">
+            <div class="shape" aria-hidden="true"><svg viewBox="0 0 400 520" preserveAspectRatio="none"><path d="M3 150 L200 4 L397 150 V517 H3 Z" fill="#11171D" stroke="#9BA6B1" stroke-width="3" stroke-dasharray="12 10" vector-effect="non-scaling-stroke"/></svg></div>
+            <h3>סוכן בלי בית</h3>
+            <ul>
+              <li><span class="mk"><svg class="ic" data-i="x"></svg></span><div><b>לקוח מתקשר</b><span>לא מזהה אותו, ושואל הכל מההתחלה.</span></div></li>
+              <li><span class="mk"><svg class="ic" data-i="x"></svg></span><div><b>שאלה על תשלום</b><span>נותן סכום שנשמע הגיוני. לפעמים לא נכון.</span></div></li>
+              <li><span class="mk"><svg class="ic" data-i="x"></svg></span><div><b>מקרה חריג</b><span>ממציא תשובה בביטחון מלא.</span></div></li>
+              <li><span class="mk"><svg class="ic" data-i="x"></svg></span><div><b>"כמה גבינו החודש?"</b><span>מישהו יושב שעתיים על שלושה אקסלים.</span></div></li>
+            </ul>
+          </article>
+          <article class="house-card good rv">
+            <div class="shape" aria-hidden="true"><svg viewBox="0 0 400 520" preserveAspectRatio="none"><path d="M3 150 L200 4 L397 150 V517 H3 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" vector-effect="non-scaling-stroke"/></svg></div>
+            <h3>סוכן עם בית</h3>
+            <ul>
+              <li><span class="mk"><svg class="ic" data-i="check"></svg></span><div><b>לקוח מתקשר</b><span>מזהה לפי המספר, ויודע מה קרה בפעם הקודמת.</span></div></li>
+              <li><span class="mk"><svg class="ic" data-i="check"></svg></span><div><b>שאלה על תשלום</b><span>יודע את היתרה המדויקת, ושולח קישור לתשלום.</span></div></li>
+              <li><span class="mk"><svg class="ic" data-i="check"></svg></span><div><b>מקרה חריג</b><span>יודע מה מותר לו, ומעביר לבן אדם עם כל הפרטים.</span></div></li>
+              <li><span class="mk"><svg class="ic" data-i="check"></svg></span><div><b>"כמה גבינו החודש?"</b><span>תשובה בוואטסאפ תוך שניות.</span></div></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- METHOD -->
+    <section class="sec light" id="method" aria-labelledby="method-h">
+      <div class="wrap">
+        <div class="center">
+          <span class="over rv">השיטה</span>
+          <h2 class="h2 rv" id="method-h">קודם בית. אחר כך סוכנים.</h2>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="rv">
+              <div class="no">1</div>
+              <h3>בונים לעסק בית: מערכת ניהול שמתאימה לו</h3>
+              <p>לקוחות, הזמנות, כספים ומשימות, במקום אחד. לא מערכת מדף שמכופפים אליה את העסק, אלא מערכת שבנויה לפי איך שאתם עובדים.</p>
+              <span class="motto">מינימום שדות, מקסימום כיסוי</span>
+              <p>רק מה שבאמת צריך. ככה העובדים ממלאים, הנתונים נשארים נקיים, והסוכן יכול לסמוך עליהם.</p>
+            </div>
+            <div class="step-art rv">
+              <div class="rec" aria-label="דוגמה לכרטיס לקוח במערכת">
+                <div class="rec-head"><span>כרטיס לקוח</span><span class="st">פעיל</span></div>
+                <div class="rec-row"><span>שם</span><b>משה לוי</b></div>
+                <div class="rec-row"><span>טלפון</span><b class="num">052-555-4471</b></div>
+                <div class="rec-row"><span>יתרה</span><b class="num">₪0</b></div>
+                <div class="rec-row"><span>הזמנה אחרונה</span><b>בדרך, מחר עד 12:00</b></div>
+                <div class="rec-row"><span>ערוץ מועדף</span><b>וואטסאפ</b></div>
+                <div class="rec-row cut"><span>שם משני</span><b>לא בשימוש</b></div>
+                <div class="rec-row cut"><span>פקס</span><b>לא בשימוש</b></div>
+                <div class="rec-foot">שדה שאף אחד לא ממלא, יוצא. מה שנשאר, תמיד מעודכן.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="step">
+            <div class="rv">
+              <div class="no">2</div>
+              <h3>מכניסים לגור בו סוכנים</h3>
+              <p>הסוכנים עונים, גובים, קובעים ומתזכרים. הם עובדים רק עם נתונים אמיתיים, בתוך כללים שאתם קובעים, וכל פעולה שלהם נרשמת במערכת.</p>
+            </div>
+            <div class="step-art rv">
+              <div class="board" id="board">
+                <div class="sw"><span class="ico"><svg class="ic" data-i="phone"></svg></span><div><h4>טלפון</h4><p>מענה קולי ושלוחות, גם בלי סמארטפון</p></div><span class="toggle" aria-hidden="true"></span></div>
+                <div class="sw"><span class="ico"><svg class="ic" data-i="message-circle"></svg></span><div><h4>וואטסאפ</h4><p>שאלות, תזכורות וקישורי תשלום</p></div><span class="toggle" aria-hidden="true"></span></div>
+                <div class="sw"><span class="ico"><svg class="ic" data-i="mail"></svg></span><div><h4>מסמכים</h4><p>קבלות, אישורים ודוחות שיוצאים לבד</p></div><span class="toggle" aria-hidden="true"></span></div>
+                <div class="sw"><span class="ico"><svg class="ic" data-i="bar-chart"></svg></span><div><h4>לבעל העסק</h4><p>שואלים במילים, מקבלים מספרים</p></div><span class="toggle" aria-hidden="true"></span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="outs">
+          <div class="out rv"><div class="bubble"><svg class="ic" data-i="clock"></svg></div><h3>פחות עבודה ידנית</h3><p>הקלדות, העתקות וטלפונים של "רק רציתי לבדוק" עוברים לסוכן.</p></div>
+          <div class="out rv"><div class="bubble"><svg class="ic" data-i="wallet"></svg></div><h3>כסף שלא הולך לאיבוד</h3><p>חובות מקבלים תזכורת בזמן, עם קישור לתשלום.</p></div>
+          <div class="out rv"><div class="bubble"><svg class="ic" data-i="moon"></svg></div><h3>מענה גם בערב</h3><p>לקוח שמתקשר מחוץ לשעות מקבל תשובה, לא תא קולי.</p></div>
+          <div class="out rv"><div class="bubble"><svg class="ic" data-i="eye"></svg></div><h3>תמונה אחת של העסק</h3><p>מה נכנס, מה פתוח ומי לא ענה, בלי לרדוף.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="sec" id="work" aria-labelledby="work-h">
+      <div class="wrap">
+        <div class="center">
+          <span class="over rv">בין לקוחותינו</span>
+          <h2 class="h2 rv" id="work-h">בתים שכבר בנינו</h2>
+          <p class="lead rv">מערכות שרצות היום אצל לקוחות. על כל אחת מהן אפשר להכניס סוכן.</p>
+        </div>
+        <div class="works">
+          <article class="work rv"><span class="medal" aria-hidden="true"><svg class="ic" data-i="receipt"></svg></span><div class="card"><div class="top"><h3>הקופה המשותפת</h3><small>גבייה וחיוב חודשי</small></div><p class="bottom">חיובים, תשלומים ותזכורות לחברים, במערכת אחת עם דוחות.<a href="https://a400600500.com/" target="_blank" rel="noopener">לאתר <svg class="ic" data-i="arrow-left"></svg></a></p></div></article>
+          <article class="work rv"><span class="medal" aria-hidden="true"><img src="clients/mekusharim.png" alt="" width="66" height="66" loading="lazy"></span><div class="card"><div class="top"><h3>מקושרים</h3><small>מרכז מוסדות קרלין סטאלין</small></div><p class="bottom">חלוקת הטבות בקו טלפוני: בדיקת זכאות ומלאי בזמן ההזמנה, וכרטסת לכל משפחה.<a href="https://mekusharim.tzvi-mark.uk/" target="_blank" rel="noopener">לאתר <svg class="ic" data-i="arrow-left"></svg></a></p></div></article>
+          <article class="work rv"><span class="medal" aria-hidden="true"><svg class="ic" data-i="car"></svg></span><div class="card"><div class="top"><h3>שערי רווחה</h3><small>הסעות חסד</small></div><p class="bottom">הזמנת הסעות בשלוחה טלפונית, והמערכת רושמת ומעדכנת את הצוות.</p></div></article>
+          <article class="work rv"><span class="medal" aria-hidden="true"><svg class="ic" data-i="truck"></svg></span><div class="card"><div class="top"><h3>סלטי פריינד</h3><small>עסק הפצה</small></div><p class="bottom">לקוחות, הזמנות והתנהלות כספית, במקום כמה אקסלים מקבילים.<a href="https://portal.salataifrainde.com/" target="_blank" rel="noopener">לאתר <svg class="ic" data-i="arrow-left"></svg></a></p></div></article>
+          <article class="work rv"><span class="medal" aria-hidden="true"><svg class="ic" data-i="wallet"></svg></span><div class="card"><div class="top"><h3>קופת ברידער</h3><small>גבייה</small></div><p class="bottom">מערכת לניהול גבייה, עם שלוחה טלפונית.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESPONSIBILITY -->
+    <section class="sec" style="padding-top:0" aria-labelledby="resp-h">
+      <div class="wrap">
+        <div class="resp rv">
+          <div class="l grain"><h2 id="resp-h">AI לא לוקח אחריות. <span>אנחנו כן.</span></h2></div>
+          <div class="r">
+            <ul>
+              <li><svg class="ic" data-i="check"></svg><span>כתובת אחת לכל המערכת: הבית, הסוכנים והחיבורים ביניהם.</span></li>
+              <li><svg class="ic" data-i="check"></svg><span>מחיר סגור לפרויקט, לא שעון שרץ.</span></li>
+              <li><svg class="ic" data-i="check"></svg><span>ליווי אחרי העלייה לאוויר: תיקונים, שינויים ושיפורים.</span></li>
+              <li><svg class="ic" data-i="check"></svg><span>כללים ברורים לסוכן: מה מותר לו, ומתי הוא מעביר לבן אדם.</span></li>
+            </ul>
+            <p class="about">MARK נוסדה על ידי צביקי מרק, שבונה מערכות ניהול ואוטומציות לעסקים ולארגונים בישראל, עם ניסיון בטלפוניה, בגבייה ובחיבור בין מערכות.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="sec" id="faq" style="padding-top:0" aria-labelledby="faq-h">
+      <div class="wrap">
+        <div class="center">
+          <span class="over rv">שאלות</span>
+          <h2 class="h2 rv" id="faq-h">מה שואלים אותנו לפני שמתחילים</h2>
+        </div>
+        <div class="faq">
+          <details class="rv"><summary>יש לי כבר מערכת. צריך להחליף אותה?<span class="pm"><svg class="ic" data-i="plus"></svg></span></summary><p>לא בהכרח. אם הנתונים בה מסודרים, מתחברים אליה ומכניסים סוכנים. אם לא, מסדרים רק את מה שצריך כדי שהסוכן יעבוד נכון.</p></details>
+          <details class="rv"><summary>מה קורה כשהסוכן לא יודע את התשובה?<span class="pm"><svg class="ic" data-i="plus"></svg></span></summary><p>הוא לא מנחש. מגדירים מראש מה מותר לו לענות ולעשות. כל מה שמחוץ לזה עובר לבן אדם, עם סיכום של השיחה.</p></details>
+          <details class="rv"><summary>כמה זה עולה?<span class="pm"><svg class="ic" data-i="plus"></svg></span></summary><p>תלוי בהיקף. אחרי שיחת היכרות קצרה מקבלים הצעה במחיר סגור לפרויקט, ולא לפי שעות.</p></details>
+          <details class="rv"><summary>כמה זמן עד שזה עובד?<span class="pm"><svg class="ic" data-i="plus"></svg></span></summary><p>תלוי בגודל העסק ובמצב הנתונים היום. בשיחת ההיכרות נותנים לוח זמנים, ומתחילים מהתהליך שהכי כואב לכם.</p></details>
+          <details class="rv"><summary>זה עובד גם עם לקוחות בלי סמארטפון?<span class="pm"><svg class="ic" data-i="plus"></svg></span></summary><p>כן. הסוכנים יכולים לעבוד גם דרך קו טלפוני רגיל, כך שכל לקוח מקבל מענה בדרך שנוחה לו.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="sec contact grain" id="contact" aria-labelledby="contact-h">
+      <div class="wrap">
+        <div>
+          <h2 class="h2 rv" id="contact-h">מה הכי מעיק לכם היום בעסק?</h2>
+          <p class="lead rv">ספרו לנו בכמה מילים. נחזור עם הצעה: מה אפשר להעביר לסוכן, ומה צריך לסדר בבית קודם.</p>
+          <div class="direct rv">
+            <a class="btn" href="https://wa.me/972556738802" target="_blank" rel="noopener"><svg class="ic" data-i="message-circle"></svg>וואטסאפ</a>
+            <a class="btn" href="tel:+972556738802"><svg class="ic" data-i="phone"></svg><span class="num">055-673-8802</span></a>
+            <a class="btn" href="mailto:z6738802@gmail.com"><svg class="ic" data-i="mail"></svg>מייל</a>
+          </div>
+        </div>
+        <form class="lead-form rv" id="lead" novalidate>
           <h3>השאירו פרטים</h3>
-          <div class="form-row">
-            <div class="form-field">
-              <label>שם</label>
-              <input type="text" id="fname" placeholder="ישראל ישראלי">
-            </div>
-            <div class="form-field">
-              <label>טלפון</label>
-              <input type="tel" id="fphone" placeholder="050-0000000">
-            </div>
+          <div class="two">
+            <div class="ff" id="ff-name"><label for="f-name">שם</label><input id="f-name" name="name" autocomplete="name" required><span class="err">צריך שם, כדי שנדע למי לחזור.</span></div>
+            <div class="ff" id="ff-phone"><label for="f-phone">טלפון</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required><span class="err">צריך מספר טלפון תקין.</span></div>
           </div>
-          <div class="form-field">
-            <label>נושא</label>
-            <select id="fsubject">
-              <option value="">בחרו נושא</option>
-              <option>מערכת IVR</option>
-              <option>אוטומציה N8N</option>
-              <option>מערכת CRM</option>
-              <option>פורטל או אתר</option>
-              <option>אינטגרציה</option>
-              <option>אחר</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label>ספרו לנו</label>
-            <textarea id="fmessage" placeholder="תארו את הצורך שלכם..."></textarea>
-          </div>
-          <button class="form-submit" onclick="sendForm()">
-            <i data-lucide="send" style="width:16px;height:16px"></i>
-            שליחה דרך וואטסאפ
-          </button>
-          <div class="form-success" id="formSuccess">תודה! נחזור אליכם בהקדם.</div>
-        </div>
+          <div class="ff"><label for="f-biz">סוג העסק</label><input id="f-biz" name="biz" placeholder="למשל: חנות, משרד, נותני שירות"></div>
+          <div class="ff"><label for="f-msg">מה הכי מעיק לכם?</label><textarea id="f-msg" name="msg" placeholder="למשל: גבייה, טלפונים חוזרים, אקסלים שלא מסתדרים"></textarea></div>
+          <button class="btn btn-teal" type="submit"><svg class="ic" data-i="send"></svg>שליחה בוואטסאפ</button>
+          <p class="fine">הלחיצה פותחת וואטסאפ עם ההודעה מוכנה. אתם שולחים.</p>
+          <p class="ok" id="ok" role="status"><svg class="ic" data-i="check"></svg>נפתח וואטסאפ עם ההודעה. נחזור אליכם.</p>
+        </form>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
   <footer>
-    <img src="logo.png" alt="MARK">
-    <span>MARK אוטומציות עסקיות חכמות — צביקי מרק</span>
-    <span>055-673-8802</span>
+    <div class="wrap">
+      <span>MARK · מערכות ניהול וסוכני AI לעסקים</span>
+      <a href="https://wa.me/972556738802" target="_blank" rel="noopener" class="num">055-673-8802</a>
+    </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
   <script>
-    lucide.createIcons();
+  (function () {
+    'use strict';
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 80);
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    /* ---------- Lucide icons (inline paths) ---------- */
+    var I = {
+      'message-circle': '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+      'arrow-down': '<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>',
+      'arrow-left': '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',
+      'rotate-ccw': '<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>',
+      'x': '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+      'check': '<path d="M20 6 9 17l-5-5"/>',
+      'phone': '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
+      'phone-incoming': '<polyline points="16 2 16 8 22 8"/><line x1="22" x2="16" y1="2" y2="8"/><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
+      'mail': '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+      'clock': '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+      'wallet': '<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>',
+      'moon': '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>',
+      'eye': '<path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/>',
+      'receipt': '<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/>',
+      'car': '<path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>',
+      'gift': '<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>',
+      'truck': '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
+      'plus': '<path d="M5 12h14"/><path d="M12 5v14"/>',
+      'send': '<path d="M14.54 21.69a.5.5 0 0 0 .94-.03l6.5-19a.5.5 0 0 0-.64-.64l-19 6.5a.5.5 0 0 0-.03.94l7.93 3.18a2 2 0 0 1 1.11 1.11z"/><path d="m21.85 2.15-10.94 10.94"/>',
+      'calendar-check': '<rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/>',
+      'bar-chart': '<path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>',
+      'user': '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+      'bot': '<path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>',
+      'database': '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>',
+      'zap': '<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>'
+    };
+    function svg(n) { return '<svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (I[n] || '') + '</svg>'; }
+    document.querySelectorAll('svg[data-i]').forEach(function (el) {
+      var t = document.createElement('div'); t.innerHTML = svg(el.getAttribute('data-i'));
+      var n = t.firstChild; if (el.getAttribute('style')) n.setAttribute('style', el.getAttribute('style'));
+      el.replaceWith(n);
+    });
+    function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
-    // Form → WhatsApp
-    function sendForm() {
-      const name = document.getElementById('fname').value.trim();
-      const phone = document.getElementById('fphone').value.trim();
-      const subject = document.getElementById('fsubject').value;
-      const message = document.getElementById('fmessage').value.trim();
-      if (!name || !phone) { alert('נא למלא שם וטלפון'); return; }
-      const text = `*פנייה חדשה מהאתר*\n\n*שם:* ${name}\n*טלפון:* ${phone}\n*נושא:* ${subject}\n*פרטים:* ${message}`;
-      window.open('https://wa.me/972556738802?text=' + encodeURIComponent(text), '_blank');
-      document.getElementById('formSuccess').style.display = 'block';
-      ['fname','fphone','fmessage'].forEach(id => document.getElementById(id).value = '');
-      document.getElementById('fsubject').value = '';
+    /* ---------- marquee ---------- */
+    var items = ['קודם בית', 'אחר כך AI', 'מינימום שדות', 'מקסימום כיסוי', 'עונה', 'גובה', 'קובע תורים', 'מדווח'];
+    var cols = ['#FFFFFF', '#F2B544', '#12C9A6', '#0A0E12'];
+    var seq = items.map(function (t, k) { return '<span>' + esc(t) + '<svg style="color:' + cols[k % 4] + '" aria-hidden="true"><use href="#spark"/></svg></span>'; }).join('');
+    document.getElementById('marquee').innerHTML = seq + seq;
+
+    /* ---------- typewriter in hero ---------- */
+    var typeEl = document.getElementById('type');
+    var phrases = ['גם כשאתם ישנים.', 'עונה ללקוחות בטלפון.', 'גובה חובות פתוחים.', 'קובע תורים ביומן.', 'מדווח לכם בוואטסאפ.'];
+    if (!reduce) (function () {
+      var pi = 0, ci = phrases[0].length, del = true;
+      function tick() {
+        var p = phrases[pi];
+        if (del) { ci--; typeEl.textContent = p.slice(0, ci); if (ci <= 0) { del = false; pi = (pi + 1) % phrases.length; } return setTimeout(tick, 32); }
+        p = phrases[pi]; ci++; typeEl.textContent = p.slice(0, ci);
+        if (ci >= p.length) { del = true; return setTimeout(tick, 2200); }
+        setTimeout(tick, 70);
+      }
+      setTimeout(tick, 2600);
+    })();
+
+    /* ---------- control panel: live readouts ---------- */
+    var leds = document.querySelectorAll('#leds .led');
+    var knobs = document.querySelectorAll('#switches .sw-knob');
+    var count = document.getElementById('p-count'), clock = document.getElementById('p-clock');
+    var amount = 84300, mins = 22 * 60 + 40;
+    if (!reduce) setInterval(function () {
+      leds.forEach(function (l) { l.classList.toggle('on', Math.random() > .5); });
+      var k = knobs[Math.floor(Math.random() * knobs.length)];
+      k.setAttribute('cy', k.getAttribute('cy') === '16' ? '38' : '16');
+      amount += Math.round(Math.random() * 400 + 120);
+      count.textContent = '₪' + amount.toLocaleString('en-US');
+      mins = (mins + 3) % 1440;
+      clock.textContent = String(Math.floor(mins / 60)).padStart(2, '0') + ':' + String(mins % 60).padStart(2, '0');
+    }, 1400);
+
+    /* ---------- demo scenarios ---------- */
+    var S = [
+      { id: 'call', tab: 'לקוח מתקשר בערב', icon: 'phone-incoming', title: 'שאלה על הזמנה', chan: 'שיחה טלפונית', hour: '22:40', time: 38,
+        steps: [
+          { t: 'log', x: 'זיהוי מספר הטלפון', r: 'משה לוי · לקוח פעיל' },
+          { t: 'agent', x: 'ערב טוב משה. ההזמנה שלך יצאה היום. רצית לבדוק מתי היא מגיעה?' },
+          { t: 'user', x: 'כן, מתי זה אמור להגיע?' },
+          { t: 'log', x: 'בדיקת סטטוס משלוח', r: 'בדרך · מחר עד 12:00' },
+          { t: 'agent', x: 'היא תגיע מחר עד 12:00. לשלוח לך הודעה כשהשליח יוצא?' },
+          { t: 'user', x: 'כן, תודה.' },
+          { t: 'act', x: 'נוצרה תזכורת ונשלח אישור בוואטסאפ' }
+        ] },
+      { id: 'debt', tab: 'חוב פתוח', icon: 'wallet', title: 'גביית יתרה', chan: 'וואטסאפ', hour: '10:15', time: 94,
+        steps: [
+          { t: 'log', x: 'סריקת יתרות פתוחות', r: 'רבקה כהן · ₪1,250 · מעל 30 יום' },
+          { t: 'agent', x: 'שלום רבקה, נשארה יתרה של ₪1,250 מספטמבר. לשלוח קישור לתשלום? אפשר גם בתשלומים.' },
+          { t: 'user', x: 'אפשר בשלושה תשלומים?' },
+          { t: 'log', x: 'בדיקת מדיניות תשלומים', r: 'מותר עד 3 תשלומים' },
+          { t: 'agent', x: 'בטח. הנה קישור לתשלום בשלושה תשלומים.' },
+          { t: 'user', x: 'שילמתי.' },
+          { t: 'act', x: 'התשלום נקלט, החשבונית נסגרה, קבלה נשלחה' }
+        ] },
+      { id: 'book', tab: 'קביעת תור', icon: 'calendar-check', title: 'תיאום ביקור', chan: 'וואטסאפ', hour: '14:02', time: 52,
+        steps: [
+          { t: 'user', x: 'שלום, צריך טכנאי למזגן. אפשר השבוע?' },
+          { t: 'log', x: 'זיהוי לקוח ובדיקת יומן', r: '2 חלונות פנויים באזור שלו' },
+          { t: 'agent', x: 'יש מקום ברביעי בין 10 ל-12, או בחמישי בין 16 ל-18. מה מתאים?' },
+          { t: 'user', x: 'רביעי.' },
+          { t: 'log', x: 'קביעת ביקור ושיבוץ טכנאי', r: 'רביעי 10:00–12:00' },
+          { t: 'agent', x: 'קבענו. יום לפני תקבל תזכורת.' },
+          { t: 'act', x: 'התור ביומן, התזכורת מתוזמנת' }
+        ] },
+      { id: 'owner', tab: 'בעל העסק שואל', icon: 'bar-chart', title: 'סיכום לבעלים', chan: 'וואטסאפ', hour: '20:30', time: 21, owner: true,
+        steps: [
+          { t: 'user', x: 'כמה גבינו החודש, ומי עוד לא שילם?' },
+          { t: 'log', x: 'שאילתה על נתוני גבייה', r: '₪84,300 · 7 יתרות פתוחות' },
+          { t: 'agent', x: 'נגבו החודש ₪84,300, שהם 92% מהיעד. יש 7 לקוחות עם יתרה פתוחה. לשלוח להם תזכורת?' },
+          { t: 'user', x: 'כן, לכולם.' },
+          { t: 'log', x: 'שליחת תזכורות', r: '7 הודעות יצאו' },
+          { t: 'act', x: 'אעדכן אותך כשמישהו משלם' }
+        ] }
+    ];
+    var WHO = { user: ['user', 'הלקוח'], agent: ['bot', 'הסוכן'], log: ['database', 'במערכת'], act: ['zap', 'בוצע'] };
+    var lines = document.getElementById('lines'), tTime = document.getElementById('t-time'), tabs = document.getElementById('tabs');
+    function fmt(s) { var m = Math.floor(s / 60), r = s % 60; return m + ':' + (r < 10 ? '0' : '') + r; }
+    function wait(ms, run) { return new Promise(function (res, rej) { setTimeout(function () { run.alive ? res() : rej(0); }, reduce ? 0 : ms); }); }
+    function addLine(st, owner, typing) {
+      var li = document.createElement('li'); li.className = 'line ' + st.t;
+      var w = WHO[st.t], lbl = (owner && st.t === 'user') ? 'בעל העסק' : w[1];
+      li.innerHTML = '<span class="who">' + svg(w[0]) + '</span><div><span class="lbl">' + lbl + '</span>' +
+        (typing ? '<span class="typing" aria-label="מקליד"><b></b><b></b><b></b></span>' :
+          '<span class="txt">' + esc(st.x) + '</span>' + (st.r ? '<br><span class="res">' + esc(st.r) + '</span>' : '')) + '</div>';
+      lines.appendChild(li); return li;
     }
-  </script>
+    var run = { alive: false }, cur = 0, started = false;
+    function show(k) {
+      run.alive = false; cur = k; started = true;
+      var sc = S[k];
+      Array.prototype.forEach.call(tabs.children, function (b, j) { b.setAttribute('aria-selected', j === k ? 'true' : 'false'); b.tabIndex = j === k ? 0 : -1; });
+      document.getElementById('tpanel').setAttribute('aria-labelledby', 'tab-' + sc.id);
+      document.getElementById('t-icon').innerHTML = svg(sc.icon);
+      document.getElementById('t-title').textContent = sc.title;
+      document.getElementById('t-chan').textContent = sc.chan;
+      document.getElementById('t-hour').textContent = sc.hour;
+      lines.innerHTML = ''; tTime.textContent = '0:00';
+      var r = run = { alive: true }, n = 0, p = Promise.resolve();
+      sc.steps.forEach(function (st) {
+        p = p.then(function () {
+          n++; tTime.textContent = fmt(Math.round(sc.time * n / sc.steps.length));
+          if (st.t === 'agent' || st.t === 'user') {
+            var li = addLine(st, sc.owner, true);
+            return wait(st.t === 'agent' ? 1000 : 700, r).then(function () { li.remove(); addLine(st, sc.owner); return wait(900 + st.x.length * 14, r); });
+          }
+          addLine(st, sc.owner); return wait(1100, r);
+        });
+      });
+      p.catch(function () {});
+    }
+    S.forEach(function (sc, k) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'pill'; b.id = 'tab-' + sc.id;
+      b.setAttribute('role', 'tab'); b.setAttribute('aria-controls', 'tpanel');
+      b.setAttribute('aria-selected', k === 0 ? 'true' : 'false'); b.tabIndex = k === 0 ? 0 : -1;
+      b.innerHTML = svg(sc.icon) + esc(sc.tab);
+      b.addEventListener('click', function () { show(k); });
+      b.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowLeft' ? 1 : e.key === 'ArrowRight' ? -1 : 0;
+        if (!d) return; e.preventDefault();
+        var j = (k + d + S.length) % S.length; tabs.children[j].focus(); show(j);
+      });
+      tabs.appendChild(b);
+    });
+    document.getElementById('replay').addEventListener('click', function () { show(cur); });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting && !started) { show(0); io.disconnect(); } }); }, { threshold: .3 });
+      io.observe(document.getElementById('tpanel'));
+    } else show(0);
 
+    /* ---------- bridge words ---------- */
+    var q = document.getElementById('bridge-h');
+    var hot = ['בית', 'מסודר'];
+    q.innerHTML = q.textContent.split(' ').map(function (w) { return '<span class="w' + (hot.indexOf(w) > -1 ? ' hot' : '') + '">' + esc(w) + '</span>'; }).join(' ');
+    var words = q.querySelectorAll('.w');
+    var hws = document.querySelectorAll('#hwins .hw');
+    var toggles = document.querySelectorAll('#board .toggle');
+
+    /* ---------- floating CTA ---------- */
+    var fc = document.getElementById('float-cta');
+    window.addEventListener('scroll', function () {
+      var c = document.getElementById('contact').getBoundingClientRect().top;
+      fc.classList.toggle('show', window.scrollY > window.innerHeight * .9 && c > window.innerHeight * .8);
+    }, { passive: true });
+
+    /* ---------- form → WhatsApp ---------- */
+    var form = document.getElementById('lead');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = form.name.value.trim(), phone = form.phone.value.trim();
+      var okN = name.length > 1, okP = /^[+\d][\d\s-]{7,}$/.test(phone);
+      document.getElementById('ff-name').classList.toggle('bad', !okN);
+      document.getElementById('ff-phone').classList.toggle('bad', !okP);
+      if (!okN) { form.name.focus(); return; }
+      if (!okP) { form.phone.focus(); return; }
+      var t = 'פנייה מהאתר\n\nשם: ' + name + '\nטלפון: ' + phone +
+        (form.biz.value.trim() ? '\nסוג העסק: ' + form.biz.value.trim() : '') +
+        (form.msg.value.trim() ? '\nמה מעיק: ' + form.msg.value.trim() : '');
+      window.open('https://wa.me/972556738802?text=' + encodeURIComponent(t), '_blank', 'noopener');
+      document.getElementById('ok').classList.add('show');
+      form.reset();
+    });
+
+    /* ---------- scroll choreography (GSAP) ---------- */
+    function staticState() {
+      words.forEach(function (w) { w.classList.add('lit'); });
+      hws.forEach(function (w) { w.classList.add('on'); });
+      toggles.forEach(function (t) { t.classList.add('on'); });
+    }
+    if (reduce || !window.gsap || !window.ScrollTrigger) { staticState(); return; }
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (window.Lenis) {
+      var lenis = new Lenis({ lerp: .1 });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+      gsap.ticker.lagSmoothing(0);
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var id = a.getAttribute('href'); if (id.length < 2) return;
+          var el = document.querySelector(id); if (!el) return;
+          e.preventDefault(); lenis.scrollTo(el, { offset: 0 });
+        });
+      });
+    }
+
+    /* hero intro */
+    gsap.from('#poster > *', { y: 30, opacity: 0, duration: .9, stagger: .09, ease: 'power3.out', delay: .1 });
+    gsap.from('#panel', { yPercent: 40, duration: 1.3, ease: 'power3.out', delay: .2 });
+
+    /* hero on scroll: poster lifts away, panel sinks and blurs (reference's cockpit effect) */
+    var heroTl = gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    heroTl.to('#poster', { yPercent: -45, ease: 'none' }, 0)
+          .to('#panel', { yPercent: 28, scale: .94, filter: 'blur(7px)', opacity: .55, ease: 'none' }, 0);
+
+    /* statement + pills slide in one by one */
+    gsap.from('.statement .big', { y: 40, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.statement', start: 'top 80%' } });
+    gsap.from('.bigpill', { x: -120, opacity: 0, duration: .8, stagger: .14, ease: 'back.out(1.6)', scrollTrigger: { trigger: '.pills-row', start: 'top 88%' } });
+
+    /* generic reveals */
+    gsap.utils.toArray('.rv').forEach(function (el) {
+      gsap.from(el, { y: 36, opacity: 0, duration: .9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+    });
+
+    /* mascot pops up */
+    gsap.from('.robot', { y: 120, rotate: -8, opacity: 0, duration: 1.1, ease: 'back.out(1.5)', scrollTrigger: { trigger: '.band', start: 'top 80%' } });
+
+    /* bridge: words light up while the house draws itself */
+    var paths = document.querySelectorAll('#house .d');
+    gsap.set(paths, { strokeDasharray: 1, strokeDashoffset: 1 });
+    gsap.timeline({ scrollTrigger: { trigger: '.bridge', start: 'top 75%', end: 'center 45%', scrub: .6,
+        onUpdate: function (s) {
+          var n = Math.round(Math.min(1, s.progress * 1.6) * words.length);
+          words.forEach(function (w, k) { w.classList.toggle('lit', k < n); });
+          hws.forEach(function (w, k) { w.classList.toggle('on', s.progress > .8 + k * .08); });
+        } } })
+      .to(paths, { strokeDashoffset: 0, stagger: .15, ease: 'none' });
+
+    /* agents' switches flip on one after another */
+    ScrollTrigger.create({ trigger: '#board', start: 'top 75%', once: true, onEnter: function () {
+      toggles.forEach(function (t, k) { setTimeout(function () { t.classList.add('on'); }, 250 + k * 320); });
+    } });
+
+    /* work medals spin in */
+    gsap.from('.work .medal', { rotate: -180, scale: .3, duration: .9, stagger: .12, ease: 'back.out(1.7)', scrollTrigger: { trigger: '.works', start: 'top 85%' } });
+  })();
+  </script>
 </body>
 </html>
